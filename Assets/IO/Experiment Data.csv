@@ -1,0 +1,33 @@
+pid,trial,scenario,aPuckColor,aTargetColor,uUnexpectedTargetColor,unexpectedTime,observedTransfers,actualTransfers,transferError,correctTransfers,transferConfidence,oddBallOccurrence,oddBallPosition,oOddball,unexpectedSoundOccurred,unexpectedPuckOccurred,observedUnexpected,correctPuckChgUnexpected,correctSoundUnexpected,unexpectedConfidence,unexpectedDescription,observedTrialTime,trackedBaseColor,actualBaseColor,baseColorCorrect,logDate,logTime
+2,1,1,white,red,red,5,0,5,5,no,50,yes,8,,no,no,no,yes,yes,50,,2,white,white,yes,12/15/2017,10:56:33
+67,1,1,white,red,red,5,4,5,1,no,50,no,0,,no,no,no,yes,yes,50,,4,white,white,yes,12/15/2017,11:11:49
+67,2,109,black,red,black,15,1,8,7,no,50,yes,4,,yes,no,no,yes,no,77,,12,black,black,yes,12/15/2017,11:12:31
+5,1,1,white,red,red,5,5,5,0,yes,50,no,0,,no,no,no,yes,yes,50,,7,white,white,yes,12/15/2017,16:18:17
+5,2,9,white,red,red,10,0,2,2,no,13,no,0,,yes,no,no,yes,no,94,,100,white,white,yes,12/15/2017,16:19:11
+5,3,10,white,red,red,15,0,5,5,no,50,no,0,,no,yes,yes,yes,no,89,puck changed to red like targt and heard sound,12,white,white,yes,12/15/2017,16:20:09
+5,4,100,black,red,black,5,0,4,4,no,50,no,0,,no,no,yes,no,no,83,cardio alarm,12,black,black,yes,12/15/2017,16:20:56
+5,5,88,black,red,white,5,0,3,3,no,50,no,0,,no,no,yes,no,no,81,umm,12,black,black,yes,12/15/2017,16:21:40
+5,6,68,white,green,black,10,0,3,3,no,50,no,0,,no,no,no,yes,yes,71,,45,black,white,no,12/15/2017,16:22:30
+5,7,142,black,green,black,15,0,4,4,no,50,no,0,,no,yes,no,no,yes,2,,11,black,black,yes,12/15/2017,16:23:12
+5,8,37,white,red,black,15,0,4,4,no,81,yes,12,,yes,no,yes,no,yes,80,faint sound,12,black,white,no,12/15/2017,16:23:58
+78,1,1,white,red,red,5,0,5,5,no,91,no,0,,no,no,no,yes,yes,75,,6,white,white,yes,12/15/2017,16:33:53
+78,2,70,white,green,black,15,0,2,2,no,50,yes,5,,no,yes,yes,yes,no,83,let the music play,12,white,white,yes,12/15/2017,16:34:45
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+37,7,1,white,red,red,5,4,4,0,yes,80,yes,0,no,no,no,no,yes,yes,98,,56,white,white,yes,12/19/2017,16:53:16
+37,8,53,white,green,white,5,1,2,1,no,50,no,0,no,yes,no,no,yes,no,98,,88,white,white,yes,12/19/2017,16:54:00
+37,9,123,black,green,white,5,2,4,2,no,64,no,0,no,yes,yes,no,no,no,100,,7,black,black,yes,12/19/2017,16:54:52
+37,10,106,black,red,black,15,1,2,1,no,50,no,0,no,no,yes,no,no,yes,76,,100,black,black,yes,12/19/2017,16:55:37
+37,11,16,white,red,white,5,3,3,0,yes,50,no,0,no,no,no,yes,no,no,74,faint sound,12,white,white,yes,12/19/2017,16:56:22
+5,1,1,white,red,red,5,0,5,5,no,50,no,0,no,no,no,no,yes,yes,89,,100,white,white,yes,12/19/2017,17:05:41
+45,1,1,white,red,red,5,5,5,0,yes,89,yes,11,yes,no,no,no,yes,yes,100,,20,white,white,yes,12/19/2017,20:24:10
+45,2,27,white,red,black,5,1,1,0,yes,50,no,11,no,yes,yes,no,no,no,0,,12,white,white,yes,12/19/2017,20:25:09
+45,3,32,white,red,black,10,3,4,1,no,71,no,11,no,no,no,yes,no,no,78,low sound,15,white,white,yes,12/19/2017,20:26:02
+45,4,88,black,red,white,5,3,3,0,yes,62,no,11,no,no,no,yes,no,no,71,that sound,11,white,black,no,12/19/2017,20:27:04
+4,3,1,white,red,red,5,5,5,0,yes,50,no,0,no,no,no,no,yes,yes,50,,8,white,white,yes,12/19/2017,20:30:07
+4,4,38,white,green,green,5,2,4,2,no,78,yes,6,no,no,yes,yes,yes,no,59,chimes,23,white,white,yes,12/19/2017,20:31:25
+4,5,68,white,green,black,10,4,4,0,yes,85,yes,5,yes,no,no,yes,no,no,68,emergency,3,white,white,yes,12/19/2017,20:32:07
