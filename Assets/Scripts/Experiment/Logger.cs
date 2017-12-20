@@ -21,7 +21,6 @@ public class Logger : MonoBehaviour {
     public string correctSoundUnexpected;
 	public int unexpectedConfidence;
 	public string unexpectedDescription;
-	public int observedTrialTime;
 	public string trackedBaseColor;
 	public string actualBaseColor;
 	public string correctTracked;
@@ -82,7 +81,7 @@ public class Logger : MonoBehaviour {
         string message = pid.ToString () + "," + trialNum++ + "," + scenario + "," + attendedPuckColor + "," + attendedTargetColor + "," + unattendedUnexpectedTargetColor + "," + unexpectedTime +
             "," + observedTransfers + "," + actualTransfers + "," + transferError + "," + correctTransfers + "," + transferConfidence + "," + oddballOccurred + 
             "," + oddBallPosition + "," + observedOddball + "," + unexpectedSoundOccurred + "," + unexpectedPuckOccurred + "," + observedUnexpected + "," + correctPuckChgUnexpected + "," + correctSoundUnexpected + "," + unexpectedConfidence + "," 
-            + unexpectedDescription + "," + observedTrialTime + "," + trackedBaseColor + "," + 
+            + unexpectedDescription + "," + trackedBaseColor + "," + 
             actualBaseColor + "," + correctTracked + "," + logDate + "," + logTime;
 
         Debug.Log("LOGGER.cs - DATAPATH is: " + Application.dataPath);

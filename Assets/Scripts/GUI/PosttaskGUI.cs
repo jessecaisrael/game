@@ -10,7 +10,7 @@ public class PosttaskGUI : MonoBehaviour {
 	private int unexpectedChoice = -1;  //v4: added this back in
 	private int unexpectedConfidence = 50;
 	private string unexpectedDescription = "";
-	private string mentalTrialTime = "";
+	//private string mentalTrialTime = "";
 	private string warningText = "";
     private int oddballSoundChoice = -1;
 
@@ -83,10 +83,10 @@ public class PosttaskGUI : MonoBehaviour {
 			GUILayout.Label (unexpectedConfidence.ToString()+"%", labelStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("100%")).x));
 			GUILayout.EndHorizontal ();
 
-			GUILayout.BeginHorizontal ();  //v7: Add time question
+			/*GUILayout.BeginHorizontal ();  //v7: Add time question
 			GUILayout.Label ("How long (in seconds) do you think the previous trial was?", labelStyle);
 			mentalTrialTime = GUILayout.TextField (mentalTrialTime, 3, textFieldStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("00000")).x));
-			GUILayout.EndHorizontal ();
+			GUILayout.EndHorizontal ();*/
 
 			if (unexpectedChoice == 1) {
 
@@ -139,7 +139,7 @@ public class PosttaskGUI : MonoBehaviour {
 				logger.observedUnexpected = "yes";
 		logger.unexpectedConfidence = unexpectedConfidence;  //v4: Back to int  //v2: This logger variable used to be an int; now string
 		logger.unexpectedDescription = unexpectedDescription;
-		logger.observedTrialTime = int.Parse (mentalTrialTime);
+		/*logger.observedTrialTime = int.Parse (mentalTrialTime);*/
 
         if (oddballSoundChoice == 0)
             logger.observedOddball = "no";
@@ -199,11 +199,11 @@ public class PosttaskGUI : MonoBehaviour {
             warningText += "You must choose yes or no\n";
         }
 
-        int observedTrialTime = 0;
+       /* int observedTrialTime = 0;
 		if (!int.TryParse (mentalTrialTime, out observedTrialTime) || observedTrialTime < 0) {
 			valid = false;
 			warningText += "Estimated trial time must be a positive integer.\n";
-		}
+		} */
 
 		if (unexpectedChoice == 1 && unexpectedDescription == "") {
 			valid = false;
