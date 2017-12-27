@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
     private int oddballPos = 0;
     private bool playUnexpected = false;
     private int playOddball = 0;
+    private int surpriseIndex = 0;
 
     //ISI durations for 13 tones, add more if more tones need to play
     private List<float> isi = new List<float> { 0.9f, 1.2f, 1.0f, 0.9f,
@@ -143,8 +144,8 @@ public class AudioManager : MonoBehaviour
 
     //need to pass in whether target sound is played
     public void PlaySoundStimuli(bool unexpectedSound) {
-        playUnexpected = unexpectedSound;
-        //Debug.Log("AudioManager - isUnexpectedSound is " + unexpectedSound);
+        //playUnexpected = unexpectedSound;
+        Debug.Log("AudioManager - isUnexpectedSound is " + unexpectedSound);
         if (soundSource != null)
             StartCoroutine(PlaySounds());
         else
@@ -158,7 +159,7 @@ public class AudioManager : MonoBehaviour
         //Random.InitState(System.DateTime.Now.Millisecond);
         //Debug.Log("System.DateTime.Millisecond: " + System.DateTime.Now.Millisecond);
 
-        int surpriseIndex = Random.Range(1, isi.Count-3);
+        //int surpriseIndex = Random.Range(2, isi.Count-2);
         Debug.Log("surpriseIndex: " + surpriseIndex.ToString());
 
         while (index < isi.Count) {
@@ -167,12 +168,12 @@ public class AudioManager : MonoBehaviour
             yield return new WaitForSeconds(isi[index]);
             
             //Randomize spatial position of current tone for task
-            int pan = Random.Range(-1, 2);
-            soundSource.panStereo = pan;
+            //int pan = Random.Range(-1, 2);
+            //soundSource.panStereo = pan;
 
             if (surpriseIndex == index && playUnexpected && unexpectedSource != null) {
                 //Randomize spatial position of unexpected tone
-                unexpectedSource.panStereo = Random.Range(-1, 2);
+                //unexpectedSource.panStereo = Random.Range(-1, 2);
                 unexpectedSource.PlayOneShot(unexpectedClip, 0.3f);
             }
             if (oddballPos == index && playOddball == 1)
@@ -190,23 +191,48 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void SetOddballPosition() {
+    //change this to pass in index
+    public void SetOddballPosition(int position) {
         //randomly select position of oddball sound
-        oddballPos = Random.Range(0, isi.Count);
+        oddballPos = position;
+        //oddballPos = Random.Range(0, isi.Count);
     }
 
     public int GetOddballPosition() {
         return oddballPos;
     }
 
-    public void SetOddballOccurrence() {
-        playOddball = Random.Range(0, 2);
+    public void SetOddballOccurrence(bool present) {
+        if (present)
+            playOddball = 1;
+        else
+            playOddball = 0;
     }
 
     public int GetOddballOccurrence() {
         return playOddball;
     }
     
+    public void SetOddballEar(int ear) {
+        soundSource.panStereo = ear;
+    }
+    
+    public void SetUnexpectedSound(bool present) {
+        if (present)
+            playUnexpected = true;
+        else
+            playUnexpected = false;
+    }
+
+    public void SetUnexpectedSoundPos(int position) {
+        surpriseIndex = position;
+    }
+
+    public void SetUnexpectedEar (int ear)
+    {
+        unexpectedSource.panStereo = ear;
+    }
+
     // Update is called once per frame
     void Update() {
         

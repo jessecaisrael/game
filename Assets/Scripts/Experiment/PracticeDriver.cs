@@ -29,15 +29,15 @@ public class PracticeDriver : MonoBehaviour {
 		logger.attendedTargetColor = GetColorString (Color.red);
 		logger.unattendedUnexpectedTargetColor = GetColorString (Color.red);
 		logger.unexpectedTime = (int)ActiveConditionSingleton.Thirds.Five;
-		if( ActiveConditionSingleton.unexpectedPuckChgOccurs ) logger.unexpectedPuckOccurred = "yes";
-		else logger.unexpectedPuckOccurred = "no";
+		if( ActiveConditionSingleton.unexpectedPuckChgOccurs ) logger.unexpectedPuckChgOccurred = "yes";
+		else logger.unexpectedPuckChgOccurred = "no";
 
         if (ActiveConditionSingleton.unexpectedSoundOccurs) logger.unexpectedSoundOccurred = "yes";
         else logger.unexpectedSoundOccurred = "no";
 
-        AudioManager.Instance().SetOddballOccurrence();
+        AudioManager.Instance().SetOddballOccurrence(true); //play target sound during practice 
         if (AudioManager.Instance().GetOddballOccurrence() == 1) {
-            AudioManager.Instance().SetOddballPosition();
+            AudioManager.Instance().SetOddballPosition(10);
             logger.oddballOccurred = "yes";
         } else {
                 logger.oddballOccurred = "no";

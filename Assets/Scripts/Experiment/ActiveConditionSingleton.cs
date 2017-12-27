@@ -19,9 +19,12 @@ public static class ActiveConditionSingleton {
     public static bool complete;
 
     //added for auditory conditions
+    public static bool oddballOccurs;
+    public static int oddballPos;
+    public static int oddballEar;
+
     public static bool unexpectedSoundOccurs;
-    //public static int targetEar;
-
-    //public enum Halves { Ten = 10, Fifteen = 15 };
-
+    public static int unexpectedSoundPosition;
+    public static int unexpectedSoundEar;
+       
 }

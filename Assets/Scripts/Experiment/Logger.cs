@@ -10,15 +10,15 @@ public class Logger : MonoBehaviour {
 	public string attendedTargetColor;
 	public string unattendedUnexpectedTargetColor;
 	public int unexpectedTime;
-	public string unexpectedPuckOccurred;
-	public int observedTransfers;
+	public string unexpectedPuckChgOccurred;
+    public string unexpectedSoundOccurred;
+    public int observedTransfers;
 	public int actualTransfers = 0;
 	public int transferError;
 	public string correctTransfers;
 	public int transferConfidence;
 	public string observedUnexpected;
-	public string correctPuckChgUnexpected;
-    public string correctSoundUnexpected;
+    public string correctUnexpected;
 	public int unexpectedConfidence;
 	public string unexpectedDescription;
 	public string trackedBaseColor;
@@ -26,7 +26,6 @@ public class Logger : MonoBehaviour {
 	public string correctTracked;
 	public string logDate;
 	public string logTime;
-    public string unexpectedSoundOccurred;
     public int oddBallPosition = -1;
     public string oddballOccurred;
     public string observedOddball;
@@ -44,17 +43,12 @@ public class Logger : MonoBehaviour {
 		else
 						correctTransfers = "no";
 
-        if (observedUnexpected == unexpectedPuckOccurred) //v4: Add back if/else for yes/no.
-		    correctPuckChgUnexpected = "yes";
-		else
-			correctPuckChgUnexpected = "no";
-
-        if (observedUnexpected == unexpectedSoundOccurred)
-            correctSoundUnexpected = "yes";
+        if (observedUnexpected == unexpectedPuckChgOccurred || observedUnexpected == unexpectedSoundOccurred)
+            correctUnexpected = "yes";
         else
-            correctSoundUnexpected = "no";
+            correctUnexpected = "no";
 
-		if (trackedBaseColor == actualBaseColor) //v3: added
+        if (trackedBaseColor == actualBaseColor) //v3: added
 						correctTracked = "yes";
 				else
 						correctTracked = "no";
@@ -80,7 +74,7 @@ public class Logger : MonoBehaviour {
 		//Log
         string message = pid.ToString () + "," + trialNum++ + "," + scenario + "," + attendedPuckColor + "," + attendedTargetColor + "," + unattendedUnexpectedTargetColor + "," + unexpectedTime +
             "," + observedTransfers + "," + actualTransfers + "," + transferError + "," + correctTransfers + "," + transferConfidence + "," + oddballOccurred + 
-            "," + oddBallPosition + "," + observedOddball + "," + unexpectedSoundOccurred + "," + unexpectedPuckOccurred + "," + observedUnexpected + "," + correctPuckChgUnexpected + "," + correctSoundUnexpected + "," + unexpectedConfidence + "," 
+            "," + oddBallPosition + "," + observedOddball + "," + observedUnexpected + "," + correctUnexpected + "," + unexpectedConfidence + "," + unexpectedPuckChgOccurred + "," + unexpectedSoundOccurred + ","
             + unexpectedDescription + "," + trackedBaseColor + "," + 
             actualBaseColor + "," + correctTracked + "," + logDate + "," + logTime;
 
