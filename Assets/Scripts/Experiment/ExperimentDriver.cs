@@ -187,7 +187,10 @@ public class ExperimentDriver : MonoBehaviour {
             if (AudioManager.Instance().GetOddballOccurrence() == 1) logger.oddballOccurred = "yes";
             else logger.oddballOccurred = "no";
 
-            logger.oddBallPosition = AudioManager.Instance().GetOddballPosition();
+            logger.oddballPosition = currentCondition.oddballPos;
+            logger.oddballEar = currentCondition.oddballLocale;
+            logger.unexpectedSoundPosition = currentCondition.unexpectedSoundPos;
+            logger.unexpectedSoundEar = currentCondition.unexpectedSoundLocale;
 
             if ( currentCondition.unexpectedPuckChgOccurs ) logger.unexpectedPuckChgOccurred = "yes";
 			else logger.unexpectedPuckChgOccurred = "no";

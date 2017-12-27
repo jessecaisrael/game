@@ -35,15 +35,17 @@ public class PracticeDriver : MonoBehaviour {
         if (ActiveConditionSingleton.unexpectedSoundOccurs) logger.unexpectedSoundOccurred = "yes";
         else logger.unexpectedSoundOccurred = "no";
 
-        AudioManager.Instance().SetOddballOccurrence(true); //play target sound during practice 
+        AudioManager.Instance().SetOddballOccurrence(true); //play target sound during practice
+        AudioManager.Instance().SetUnexpectedSound(false);
         if (AudioManager.Instance().GetOddballOccurrence() == 1) {
             AudioManager.Instance().SetOddballPosition(10);
+            AudioManager.Instance().SetOddballEar(-1);
             logger.oddballOccurred = "yes";
+
         } else {
                 logger.oddballOccurred = "no";
         }
-        logger.oddBallPosition = AudioManager.Instance().GetOddballPosition();
-                
+                        
         SceneManager.LoadScene("Trial");
         //Deprecated: Application.LoadLevel ("Trial");
 	}

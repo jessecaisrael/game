@@ -26,9 +26,12 @@ public class Logger : MonoBehaviour {
 	public string correctTracked;
 	public string logDate;
 	public string logTime;
-    public int oddBallPosition = -1;
+    public int oddballPosition = -1;
+    public int oddballEar = 0;
     public string oddballOccurred;
     public string observedOddball;
+    public int unexpectedSoundPosition = -1;
+    public int unexpectedSoundEar = 0;
 
     // Use this for initialization
 	void Start () {
@@ -74,11 +77,10 @@ public class Logger : MonoBehaviour {
 		//Log
         string message = pid.ToString () + "," + trialNum++ + "," + scenario + "," + attendedPuckColor + "," + attendedTargetColor + "," + unattendedUnexpectedTargetColor + "," + unexpectedTime +
             "," + observedTransfers + "," + actualTransfers + "," + transferError + "," + correctTransfers + "," + transferConfidence + "," + oddballOccurred + 
-            "," + oddBallPosition + "," + observedOddball + "," + observedUnexpected + "," + correctUnexpected + "," + unexpectedConfidence + "," + unexpectedPuckChgOccurred + "," + unexpectedSoundOccurred + ","
-            + unexpectedDescription + "," + trackedBaseColor + "," + 
+            "," + oddballPosition + "," + oddballEar + "," + observedOddball + "," + observedUnexpected + "," + correctUnexpected + "," + unexpectedConfidence + "," + unexpectedPuckChgOccurred + "," + unexpectedSoundOccurred + "," + unexpectedSoundPosition + ","
+            + unexpectedSoundEar + "," + unexpectedDescription + "," + trackedBaseColor + "," + 
             actualBaseColor + "," + correctTracked + "," + logDate + "," + logTime;
 
-        Debug.Log("LOGGER.cs - DATAPATH is: " + Application.dataPath);
         using ( System.IO.StreamWriter w = System.IO.File.AppendText(Application.dataPath + "/.." + "/Assets/IO/Experiment Data.csv")) {
             w.WriteLine(message);
             w.Flush();
