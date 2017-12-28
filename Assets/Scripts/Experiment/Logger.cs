@@ -26,12 +26,12 @@ public class Logger : MonoBehaviour {
 	public string correctTracked;
 	public string logDate;
 	public string logTime;
-    public int oddballPosition = -1;
-    public int oddballEar = 0;
+    public int oddballPosition;
+    public int oddballEar;
     public string oddballOccurred;
     public string observedOddball;
-    public int unexpectedSoundPosition = -1;
-    public int unexpectedSoundEar = 0;
+    public int unexpectedSoundPosition;
+    public int unexpectedSoundEar;
 
     // Use this for initialization
 	void Start () {
@@ -46,10 +46,11 @@ public class Logger : MonoBehaviour {
 		else
 						correctTransfers = "no";
 
-        if (observedUnexpected == unexpectedPuckChgOccurred || observedUnexpected == unexpectedSoundOccurred)
-            correctUnexpected = "yes";
-        else
-            correctUnexpected = "no";
+        if (observedUnexpected == unexpectedPuckChgOccurred && observedUnexpected == unexpectedSoundOccurred)
+            correctUnexpected = "all";
+        else if (observedUnexpected == unexpectedPuckChgOccurred || observedUnexpected == unexpectedSoundOccurred)
+            correctUnexpected = "partial";
+        else correctUnexpected = "none";
 
         if (trackedBaseColor == actualBaseColor) //v3: added
 						correctTracked = "yes";

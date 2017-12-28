@@ -8,20 +8,23 @@ public class AudioManager : MonoBehaviour
     public AudioSource bgmSource, soundSource, unexpectedSource;
     public AudioClip bgmClip, OddBallClip, std1Clip, std2Clip, std3Clip, unexpectedClip;
     
-    const float MaxVolume_BGM = 5.0f;
+    //const float MaxVolume_BGM = 5.0f;
     //const float MaxVolume_target = 1f;
     //const float MaxVolume_distractor = 1f;
-    static float CurrentVolumeNormalized_BGM = 0.1f;
+    //static float CurrentVolumeNormalized_BGM = 0.1f;
     //static float CurrentVolumeNormalized_target = 1f;
     //static float CurrentVolumeNormalized_distractor = 1f;
-    static bool isMuted = false;
+    //static bool isMuted = false;
 
     //the following variables are used for auditory stimuli
-    private int oddballPos = 0;
+    private int oddballPos = -99;
     private bool playUnexpected = false;
     private int playOddball = 0;
-    private int surpriseIndex = 0;
+    private int surpriseIndex = -99;
+    private int oddballEar = -99;
+    private int surpriseEar = -99;
 
+    int[] earSettings = new int[] { -1, 1 };
     //ISI durations for 13 tones, add more if more tones need to play
     private List<float> isi = new List<float> { 0.9f, 1.2f, 1.0f, 0.9f,
         1.7f, 1.5f, 1.0f, 1.2f, 1.5f, 1.0f, 1.7f, 1.5f, 0.9f };
@@ -156,29 +159,24 @@ public class AudioManager : MonoBehaviour
         RandomizeISI();
 
         int index = 0;
-        //Random.InitState(System.DateTime.Now.Millisecond);
-        //Debug.Log("System.DateTime.Millisecond: " + System.DateTime.Now.Millisecond);
-
-        //int surpriseIndex = Random.Range(2, isi.Count-2);
-        Debug.Log("surpriseIndex: " + surpriseIndex.ToString());
-
+        
         while (index < isi.Count) {
            // Debug.Log("Index: " + index + "; ISI: " + isi[index]);
 
             yield return new WaitForSeconds(isi[index]);
             
-            //Randomize spatial position of current tone for task
-            //int pan = Random.Range(-1, 2);
-            //soundSource.panStereo = pan;
-
             if (surpriseIndex == index && playUnexpected && unexpectedSource != null) {
                 //Randomize spatial position of unexpected tone
-                //unexpectedSource.panStereo = Random.Range(-1, 2);
+                unexpectedSource.panStereo = surpriseEar;
                 unexpectedSource.PlayOneShot(unexpectedClip, 0.3f);
             }
-            if (oddballPos == index && playOddball == 1)
+            if (oddballPos == index && playOddball == 1) {
+                soundSource.panStereo = oddballEar;
                 soundSource.PlayOneShot(OddBallClip, 0.5f);
-            else {
+            }
+            else
+            {
+                soundSource.panStereo = earSettings[Random.Range(0, earSettings.Length)];
                 int stdIndex = Random.Range(1, 3);
                 if (stdIndex == 1)
                     soundSource.PlayOneShot(std1Clip, 0.5f);
@@ -193,9 +191,7 @@ public class AudioManager : MonoBehaviour
 
     //change this to pass in index
     public void SetOddballPosition(int position) {
-        //randomly select position of oddball sound
         oddballPos = position;
-        //oddballPos = Random.Range(0, isi.Count);
     }
 
     public int GetOddballPosition() {
@@ -214,9 +210,12 @@ public class AudioManager : MonoBehaviour
     }
     
     public void SetOddballEar(int ear) {
-        soundSource.panStereo = ear;
+        oddballEar = ear;
     }
-    
+
+    public int GetOddballEar() {
+        return oddballEar;
+    }
     public void SetUnexpectedSound(bool present) {
         if (present)
             playUnexpected = true;
@@ -224,21 +223,28 @@ public class AudioManager : MonoBehaviour
             playUnexpected = false;
     }
 
+    
     public void SetUnexpectedSoundPos(int position) {
         surpriseIndex = position;
     }
 
-    public void SetUnexpectedEar (int ear)
-    {
-        unexpectedSource.panStereo = ear;
+    public int GetUnexpectedSoundPos() {
+        return surpriseIndex;
     }
 
+    public void SetUnexpectedEar (int ear) {
+        surpriseEar = ear;
+    }
+
+    public int GetUnexpectedSoundEar() {
+        return surpriseEar;
+    }
     // Update is called once per frame
     void Update() {
         
     }
 
-    static float GetBGMVolume() {
-        return isMuted ? 0f : MaxVolume_BGM * CurrentVolumeNormalized_BGM;
-    }
+    //static float GetBGMVolume() {
+      //  return isMuted ? 0f : MaxVolume_BGM * CurrentVolumeNormalized_BGM;
+    //}
 }

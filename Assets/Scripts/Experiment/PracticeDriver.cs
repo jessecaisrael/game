@@ -20,7 +20,12 @@ public class PracticeDriver : MonoBehaviour {
 		ActiveConditionSingleton.unexpectedSegment = ActiveConditionSingleton.Thirds.Five;
 		ActiveConditionSingleton.unexpectedPuckChgOccurs = false;
 		ActiveConditionSingleton.simulationId = 1; //if you have more than 1 practice trial you need to adjust simulationId starting val in ExperimentDriver
-        ActiveConditionSingleton.unexpectedSoundOccurs = false; 
+        ActiveConditionSingleton.unexpectedSoundOccurs = false;
+        ActiveConditionSingleton.unexpectedSoundPosition = 7;
+        ActiveConditionSingleton.unexpectedSoundEar = 1;
+        ActiveConditionSingleton.oddballOccurs = true;
+        ActiveConditionSingleton.oddballPos = 10;
+        ActiveConditionSingleton.oddballEar = -1;
 
         //Set Condition IVs to log
         Logger logger = (Logger)gameObject.GetComponent<Logger>();
@@ -32,20 +37,34 @@ public class PracticeDriver : MonoBehaviour {
 		if( ActiveConditionSingleton.unexpectedPuckChgOccurs ) logger.unexpectedPuckChgOccurred = "yes";
 		else logger.unexpectedPuckChgOccurred = "no";
 
-        if (ActiveConditionSingleton.unexpectedSoundOccurs) logger.unexpectedSoundOccurred = "yes";
-        else logger.unexpectedSoundOccurred = "no";
-
-        AudioManager.Instance().SetOddballOccurrence(true); //play target sound during practice
-        AudioManager.Instance().SetUnexpectedSound(false);
-        if (AudioManager.Instance().GetOddballOccurrence() == 1) {
-            AudioManager.Instance().SetOddballPosition(10);
-            AudioManager.Instance().SetOddballEar(-1);
-            logger.oddballOccurred = "yes";
-
+        if (ActiveConditionSingleton.unexpectedSoundOccurs)
+        {
+            logger.unexpectedSoundOccurred = "yes";
+            AudioManager.Instance().SetUnexpectedSound(true);
         } else {
-                logger.oddballOccurred = "no";
+            logger.unexpectedSoundOccurred = "no";
+            AudioManager.Instance().SetUnexpectedSound(false);
         }
-                        
+        logger.unexpectedSoundPosition = ActiveConditionSingleton.unexpectedSoundPosition;
+        logger.unexpectedSoundEar = ActiveConditionSingleton.unexpectedSoundEar;
+
+        AudioManager.Instance().SetUnexpectedSoundPos(logger.unexpectedSoundPosition);
+        AudioManager.Instance().SetUnexpectedEar(logger.unexpectedSoundEar);
+
+        if (ActiveConditionSingleton.oddballOccurs) {
+            logger.oddballOccurred = "yes";
+            AudioManager.Instance().SetOddballOccurrence(true); //play target sound during practice
+        }
+        else {
+            logger.oddballOccurred = "no";
+            AudioManager.Instance().SetOddballOccurrence(false);
+        }
+
+        logger.oddballPosition = ActiveConditionSingleton.oddballPos;
+        logger.oddballEar = ActiveConditionSingleton.oddballEar;
+        AudioManager.Instance().SetOddballPosition(ActiveConditionSingleton.oddballPos);
+        AudioManager.Instance().SetOddballEar(ActiveConditionSingleton.oddballEar);
+
         SceneManager.LoadScene("Trial");
         //Deprecated: Application.LoadLevel ("Trial");
 	}

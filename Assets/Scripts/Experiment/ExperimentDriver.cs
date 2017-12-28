@@ -34,6 +34,8 @@ public class ExperimentDriver : MonoBehaviour {
         int indexUnexpectedSoundPosition;
         int indexUnexpectedSoundEar;
 
+        int[] earSettings = new int[] { -1, 1 }; //-1 is for left ear, 1 is for right ear
+
 
         Random.InitState(gameObject.GetComponent<Logger>().pid);
         conditions = new ArrayList();
@@ -47,16 +49,16 @@ public class ExperimentDriver : MonoBehaviour {
                     {    
     //                  foreach (int unexpectedSoundCond in unexpectedSoundConds) {    //experimental
                         
-                            Color aPuckColor = attendedPuckColors[GetRandomIndex(0, attendedPuckColors.Length)];
-                            Color uUnexpectedTargetColor = unattendedUnexpectedTargetColors[GetRandomIndex(0, unattendedUnexpectedTargetColors.Length)];
+                            Color aPuckColor = attendedPuckColors[Random.Range(0, attendedPuckColors.Length)];
+                            Color uUnexpectedTargetColor = unattendedUnexpectedTargetColors[Random.Range(0, unattendedUnexpectedTargetColors.Length)];
                       
-                            ActiveConditionSingleton.Thirds uTime = unexpectedTimes[GetRandomIndex(0, unexpectedTimes.Length)];
+                            ActiveConditionSingleton.Thirds uTime = unexpectedTimes[Random.Range(0, unexpectedTimes.Length)];
 
-                            indexOddballEar = GetRandomIndex(-1, 2);
-                            indexOddballPosition = GetRandomIndex(0, 13);
+                            indexOddballEar = earSettings[Random.Range(0, earSettings.Length)];
+                            indexOddballPosition = Random.Range(0, 13); 
 
-                            indexUnexpectedSoundPosition = GetRandomIndex(2, 11);
-                            indexUnexpectedSoundEar = GetRandomIndex(-1, 2);
+                            indexUnexpectedSoundPosition = Random.Range(0, 12);
+                            indexUnexpectedSoundEar = earSettings[Random.Range(0, earSettings.Length)];
 
                             conditions.Add(new Condition(simulationId++, aPuckColor, attendedTargetColor, uUnexpectedTargetColor, uTime, unexpectedOccurOption, unexpectedSoundsOption, oddballOccurOption, indexOddballPosition, indexOddballEar, indexUnexpectedSoundPosition, indexUnexpectedSoundEar));
           //            }
@@ -64,8 +66,7 @@ public class ExperimentDriver : MonoBehaviour {
                 }
             }
         }
-        Debug.Log ("Condition count: " + conditions.Count);
-
+        
         //Randomize condition order
         //This call has been moved to earlier point because Random is needed Random.InitState(gameObject.GetComponent<Logger>().pid);
 		for (int i=0; i < conditions.Count; i++) {
@@ -165,14 +166,6 @@ public class ExperimentDriver : MonoBehaviour {
             ActiveConditionSingleton.unexpectedSoundPosition = currentCondition.unexpectedSoundPos;
             ActiveConditionSingleton.unexpectedSoundEar = currentCondition.unexpectedSoundLocale;
 
-            AudioManager.Instance().SetOddballOccurrence(currentCondition.oddballPresent);
-            if (AudioManager.Instance().GetOddballOccurrence() == 1) {
-                AudioManager.Instance().SetOddballPosition(currentCondition.oddballPos);
-                AudioManager.Instance().SetOddballEar(currentCondition.oddballLocale);
-            } 
-            AudioManager.Instance().SetUnexpectedSound(currentCondition.unexpectedSound);
-            AudioManager.Instance().SetUnexpectedSoundPos(currentCondition.unexpectedSoundPos);
-
             SceneManager.LoadScene("Trial");
             //Application.LoadLevel ("Trial");
 
@@ -184,21 +177,36 @@ public class ExperimentDriver : MonoBehaviour {
 			logger.unattendedUnexpectedTargetColor = GetColorString(currentCondition.unattendedUnexpectedTargetColor);
 			logger.unexpectedTime = (int)currentCondition.unexpectedTime;
 
-            if (AudioManager.Instance().GetOddballOccurrence() == 1) logger.oddballOccurred = "yes";
+            if (currentCondition.oddballPresent) logger.oddballOccurred = "yes";
             else logger.oddballOccurred = "no";
 
             logger.oddballPosition = currentCondition.oddballPos;
             logger.oddballEar = currentCondition.oddballLocale;
+            AudioManager.Instance().SetOddballOccurrence(currentCondition.oddballPresent);
+            AudioManager.Instance().SetOddballPosition(currentCondition.oddballPos);
+            AudioManager.Instance().SetOddballEar(currentCondition.oddballLocale);
+    
+            if ( currentCondition.unexpectedPuckChgOccurs ) logger.unexpectedPuckChgOccurred = "yes";
+            else logger.unexpectedPuckChgOccurred = "no";
+
+            if (currentCondition.unexpectedSound) logger.unexpectedSoundOccurred = "yes";
+            else logger.unexpectedSoundOccurred = "no";
+
             logger.unexpectedSoundPosition = currentCondition.unexpectedSoundPos;
             logger.unexpectedSoundEar = currentCondition.unexpectedSoundLocale;
+            AudioManager.Instance().SetUnexpectedSound(currentCondition.unexpectedSound);
+            AudioManager.Instance().SetUnexpectedSoundPos(currentCondition.unexpectedSoundPos);
+            AudioManager.Instance().SetUnexpectedEar(currentCondition.unexpectedSoundLocale);
 
-            if ( currentCondition.unexpectedPuckChgOccurs ) logger.unexpectedPuckChgOccurred = "yes";
-			else logger.unexpectedPuckChgOccurred = "no";
+            Debug.Log("currentCondition.oddballPos: " + currentCondition.oddballPos + " currentCondition.oddballLocale: " + currentCondition.oddballLocale + "\n");
+            Debug.Log("logger.oddballPosition: " + logger.oddballPosition + " logger.oddballEar: " + logger.oddballEar + "\n");
+            Debug.Log("AudioManager::GetOddballPos(): " + AudioManager.Instance().GetOddballPosition() + " AudioManager::GetOddballEar: " + AudioManager.Instance().GetOddballEar() + "\n\n");
 
-            if ( currentCondition.unexpectedSound) logger.unexpectedSoundOccurred = "yes";
-            else logger.unexpectedSoundOccurred = "no";
-		}
-		else {
+            Debug.Log("currentCondition.unexpectedSoundPos: " + currentCondition.unexpectedSoundPos + " currentCondition.unexpectedSoundLocale: " + currentCondition.unexpectedSoundLocale + "\n");
+            Debug.Log("logger.unexpectedSoundPosition: " + logger.unexpectedSoundPosition + " logger.unexpectedSoundEar: " + logger.unexpectedSoundEar + "\n");
+            Debug.Log("AudioManager::GetUnexpectedSoundPos(): " + AudioManager.Instance().GetUnexpectedSoundPos() + " AudioManager::GetUnexpectedSoundEar(): " + AudioManager.Instance().GetUnexpectedSoundEar() + "\n\n");
+        }
+        else {
             //Change to call the FullAttentionDriver.cs - this will be similar to PracticeDriver except the unexpected stimuli will occur
             //Then from FullAttentionDriver call FullAttentionPosttaskGUI which will also call ExperimentCompleteGUI there
 			gameObject.GetComponent<ExperimentCompleteGUI>().enabled = true;
@@ -219,9 +227,6 @@ public class ExperimentDriver : MonoBehaviour {
 						return "";
 	}
 	
-    int GetRandomIndex(int start, int end) {
-        return Random.Range(start, end);
-    }
 	// Update is called once per frame
 	void Update () {
 		if (ActiveConditionSingleton.complete) {
@@ -242,8 +247,6 @@ public class ExperimentDriver : MonoBehaviour {
         public int oddballLocale;
         public int unexpectedSoundPos;
         public int unexpectedSoundLocale;
-
-        // public int unexpectedEar = 1;
 
         public Condition ( int simulationId, Color attendedPuckColor, Color attendedTargetColor, Color unattendedUnexpectedTargetColor, ActiveConditionSingleton.Thirds unexpectedTime, bool unexpectedOccurs, bool unexpectedSound, bool oddballOccurs, int oddballPosition, int oddballEar, int unexpectedSoundPosition, int unexpectedSoundEar) {
 			this.simulationId = simulationId;

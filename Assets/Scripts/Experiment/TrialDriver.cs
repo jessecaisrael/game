@@ -26,8 +26,7 @@ public class TrialDriver : MonoBehaviour {
 
     //The following are auditory variables
     private bool isUnexpectedSound; 
-    //private int unexpectedEar; 
-
+    
     void Start () {
 		//Get Conditions
 		whiteTargetTexture = ActiveConditionSingleton.whiteTargetTexture;
