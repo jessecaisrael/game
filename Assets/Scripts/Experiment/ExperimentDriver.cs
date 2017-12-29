@@ -219,7 +219,7 @@ public class ExperimentDriver : MonoBehaviour {
         else {
             //Change to call the FullAttentionDriver.cs - this will be similar to PracticeDriver except the unexpected stimuli will occur
             //Then from FullAttentionDriver call FullAttentionPosttaskGUI which will also call ExperimentCompleteGUI there
-			gameObject.GetComponent<ExperimentCompleteGUI>().enabled = true;
+			gameObject.GetComponent<FullAttentionPretaskGUI>().enabled = true;
 			Destroy(this);
 		}
 	}
