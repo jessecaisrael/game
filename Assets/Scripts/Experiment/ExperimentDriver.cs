@@ -64,7 +64,7 @@ public class ExperimentDriver : MonoBehaviour {
                             indexOddballEar = earSettings[Random.Range(0, earSettings.Length)];
                             indexOddballPosition = Random.Range(0, 13); 
 
-                            indexUnexpectedSoundPosition = Random.Range(2, 12);
+                            indexUnexpectedSoundPosition = Random.Range(2, 11);
                             indexUnexpectedSoundEar = earSettings[Random.Range(0, earSettings.Length)];
 
                             conditions.Add(new Condition(simulationList[simulationListIndex++], aPuckColor, attendedTargetColor, uUnexpectedTargetColor, uTime, unexpectedOccurOption, unexpectedSoundsOption, oddballOccurOption, indexOddballPosition, indexOddballEar, indexUnexpectedSoundPosition, indexUnexpectedSoundEar, unexpectedSoundCond));
