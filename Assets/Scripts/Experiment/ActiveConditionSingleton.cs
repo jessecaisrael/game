@@ -26,5 +26,5 @@ public static class ActiveConditionSingleton {
     public static bool unexpectedSoundOccurs;
     public static int unexpectedSoundPosition;
     public static int unexpectedSoundEar;
-       
+    public static int unexpectedSoundOption;       
 }

@@ -24,9 +24,6 @@ public class TrialDriver : MonoBehaviour {
 
 	private int markedTransfers = 0; //this tracks spacebar presses
 
-    //The following are auditory variables
-    private bool isUnexpectedSound; 
-    
     void Start () {
 		//Get Conditions
 		whiteTargetTexture = ActiveConditionSingleton.whiteTargetTexture;
@@ -38,9 +35,7 @@ public class TrialDriver : MonoBehaviour {
 		simulationId = ActiveConditionSingleton.simulationId;
 		whiteBasicTexture = ActiveConditionSingleton.whiteBasicTexture;
 		blackBasicTexture = ActiveConditionSingleton.blackBasicTexture;
-        isUnexpectedSound = ActiveConditionSingleton.unexpectedSoundOccurs;
-        //unexpectedEar = 1; // ActiveConditionSingleton.unexpectedEar;
-
+       
        //Read in positions and velocities
 		string simulationData = "";
 
@@ -50,8 +45,8 @@ public class TrialDriver : MonoBehaviour {
 			}
 		}
 
-        //Debug.Log("SimulationId is: " + simulationId.ToString());
-		//Load pucks
+        Debug.Log("SimulationID is: " + simulationId);
+        //Load pucks
 		string[] simulationValues = simulationData.Split (new char[]{','});
 		int valueIndex = 0;
         
@@ -87,11 +82,7 @@ public class TrialDriver : MonoBehaviour {
 			valueIndex += 2; //skip both collision counts
 		}
 
-        //Set sound settings: isis, oddball location, unexpected time
-        AudioManager.Instance().RandomizeISI();
-        //Moved to ExperimentDriver - AudioManager.Instance().SetOddballPosition();
-        // AudioManager.Instance().SetUnexpectedSound();
-        
+              
         StartCountdown ();
 	}
 
@@ -150,7 +141,8 @@ public class TrialDriver : MonoBehaviour {
                 //Begin background whitenoise at the beginning of the trial
                 AudioManager.Instance().PlayBGM();
                 StartPucks();
-                AudioManager.Instance().PlaySoundStimuli(isUnexpectedSound);
+                AudioManager.Instance().RandomizeISI();
+                AudioManager.Instance().PlaySoundStimuli();
 			}
 		}
 	}

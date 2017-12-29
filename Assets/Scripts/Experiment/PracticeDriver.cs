@@ -23,10 +23,11 @@ public class PracticeDriver : MonoBehaviour {
         ActiveConditionSingleton.unexpectedSoundOccurs = false;
         ActiveConditionSingleton.unexpectedSoundPosition = 7;
         ActiveConditionSingleton.unexpectedSoundEar = 1;
+        ActiveConditionSingleton.unexpectedSoundOption = 1;
         ActiveConditionSingleton.oddballOccurs = true;
         ActiveConditionSingleton.oddballPos = 10;
         ActiveConditionSingleton.oddballEar = -1;
-
+        
         //Set Condition IVs to log
         Logger logger = (Logger)gameObject.GetComponent<Logger>();
 		logger.scenario = ActiveConditionSingleton.simulationId;
@@ -47,9 +48,11 @@ public class PracticeDriver : MonoBehaviour {
         }
         logger.unexpectedSoundPosition = ActiveConditionSingleton.unexpectedSoundPosition;
         logger.unexpectedSoundEar = ActiveConditionSingleton.unexpectedSoundEar;
+        logger.unexpectedSoundOption = ActiveConditionSingleton.unexpectedSoundOption;
 
         AudioManager.Instance().SetUnexpectedSoundPos(logger.unexpectedSoundPosition);
         AudioManager.Instance().SetUnexpectedEar(logger.unexpectedSoundEar);
+        AudioManager.Instance().SetUnexpectedSoundCondition(logger.unexpectedSoundOption);
 
         if (ActiveConditionSingleton.oddballOccurs) {
             logger.oddballOccurred = "yes";

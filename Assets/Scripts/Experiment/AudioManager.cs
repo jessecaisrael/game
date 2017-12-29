@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager _instance;
     public AudioSource bgmSource, soundSource, unexpectedSource;
-    public AudioClip bgmClip, OddBallClip, std1Clip, std2Clip, std3Clip, unexpectedClip;
+    public AudioClip bgmClip, OddBallClip, std2Clip, std3Clip, unexpectedClip1, unexpectedClip2;
     
     //const float MaxVolume_BGM = 5.0f;
     //const float MaxVolume_target = 1f;
@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
     //the following variables are used for auditory stimuli
     private int oddballPos = -99;
     private bool playUnexpected = false;
+    private int unexpectedSpeed = -1; //1=regular, 2=fast
     private int playOddball = 0;
     private int surpriseIndex = -99;
     private int oddballEar = -99;
@@ -103,13 +104,6 @@ public class AudioManager : MonoBehaviour
         else throw new UnityException("soundSource is NULL! - PlayBGM() failed");
     }
 
-    public void PlayStdSound1() {
-        if (soundSource != null) {
-            soundSource.PlayOneShot(std1Clip, 0.3f);
-        }
-        else throw new UnityException("soundSource is NULL! - PlayBGM() failed");
-    }
-
     public void PlayStdSound2()
     {
         if (soundSource != null) {
@@ -146,9 +140,7 @@ public class AudioManager : MonoBehaviour
     }
 
     //need to pass in whether target sound is played
-    public void PlaySoundStimuli(bool unexpectedSound) {
-        //playUnexpected = unexpectedSound;
-        Debug.Log("AudioManager - isUnexpectedSound is " + unexpectedSound);
+    public void PlaySoundStimuli() {
         if (soundSource != null)
             StartCoroutine(PlaySounds());
         else
@@ -168,19 +160,19 @@ public class AudioManager : MonoBehaviour
             if (surpriseIndex == index && playUnexpected && unexpectedSource != null) {
                 //Randomize spatial position of unexpected tone
                 unexpectedSource.panStereo = surpriseEar;
-                unexpectedSource.PlayOneShot(unexpectedClip, 0.3f);
+                if (unexpectedSpeed == 1)
+                    unexpectedSource.PlayOneShot(unexpectedClip1, 0.3f);
+                else if (unexpectedSpeed == 2)
+                    unexpectedSource.PlayOneShot(unexpectedClip2, 0.3f);
             }
             if (oddballPos == index && playOddball == 1) {
                 soundSource.panStereo = oddballEar;
                 soundSource.PlayOneShot(OddBallClip, 0.5f);
             }
-            else
-            {
+            else {
                 soundSource.panStereo = earSettings[Random.Range(0, earSettings.Length)];
                 int stdIndex = Random.Range(1, 3);
                 if (stdIndex == 1)
-                    soundSource.PlayOneShot(std1Clip, 0.5f);
-                else if (stdIndex == 2)
                     soundSource.PlayOneShot(std2Clip, 0.5f);
                 else
                     soundSource.PlayOneShot(std3Clip, 0.5f);
@@ -216,6 +208,7 @@ public class AudioManager : MonoBehaviour
     public int GetOddballEar() {
         return oddballEar;
     }
+
     public void SetUnexpectedSound(bool present) {
         if (present)
             playUnexpected = true;
@@ -223,7 +216,6 @@ public class AudioManager : MonoBehaviour
             playUnexpected = false;
     }
 
-    
     public void SetUnexpectedSoundPos(int position) {
         surpriseIndex = position;
     }
@@ -239,6 +231,10 @@ public class AudioManager : MonoBehaviour
     public int GetUnexpectedSoundEar() {
         return surpriseEar;
     }
+    
+    public void SetUnexpectedSoundCondition(int condition) {
+        unexpectedSpeed = condition;
+    } 
     // Update is called once per frame
     void Update() {
         

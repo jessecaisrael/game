@@ -30,7 +30,7 @@ public class PretaskGUI : MonoBehaviour {
 		}
 
         labelText = labelText + "\n\n Don't forget to listen for " +
-            "the presence of the target sound. You can press the buttons below to listen to the sounds again\n";
+            "the presence of the target sound. You can press the buttons below to listen to the sounds again before you begin the trial. You <b>won't</b> have the chance to come back to this screen after you begin.\n";
            
         //place the label GUI element
         GUILayout.BeginArea (CenteredRect (Screen.width / 2, Screen.height / 2));
@@ -39,10 +39,8 @@ public class PretaskGUI : MonoBehaviour {
         if (GUILayout.Button("Click to Hear Target Sound"))
             AudioManager.Instance().PlayOddball();
         if (GUILayout.Button("Click to Hear Distractor Sound 1"))
-            AudioManager.Instance().PlayStdSound1();
-        if (GUILayout.Button("Click to Hear Distractor Sound 2"))
             AudioManager.Instance().PlayStdSound2();
-        if (GUILayout.Button("Click to Hear Distractor Sound 3"))
+        if (GUILayout.Button("Click to Hear Distractor Sound 2"))
             AudioManager.Instance().PlayStdSound3();
 
         GUILayout.Space(20);

@@ -32,6 +32,7 @@ public class Logger : MonoBehaviour {
     public string observedOddball;
     public int unexpectedSoundPosition;
     public int unexpectedSoundEar;
+    public int unexpectedSoundOption;
 
     // Use this for initialization
 	void Start () {
@@ -48,7 +49,7 @@ public class Logger : MonoBehaviour {
 
         if (observedUnexpected == unexpectedPuckChgOccurred && observedUnexpected == unexpectedSoundOccurred)
             correctUnexpected = "all";
-        else if (observedUnexpected == unexpectedPuckChgOccurred || observedUnexpected == unexpectedSoundOccurred)
+        else if (observedUnexpected == "yes" && (observedUnexpected == unexpectedPuckChgOccurred || observedUnexpected == unexpectedSoundOccurred))
             correctUnexpected = "partial";
         else correctUnexpected = "none";
 
@@ -79,7 +80,7 @@ public class Logger : MonoBehaviour {
         string message = pid.ToString () + "," + trialNum++ + "," + scenario + "," + attendedPuckColor + "," + attendedTargetColor + "," + unattendedUnexpectedTargetColor + "," + unexpectedTime +
             "," + observedTransfers + "," + actualTransfers + "," + transferError + "," + correctTransfers + "," + transferConfidence + "," + oddballOccurred + 
             "," + oddballPosition + "," + oddballEar + "," + observedOddball + "," + observedUnexpected + "," + correctUnexpected + "," + unexpectedConfidence + "," + unexpectedPuckChgOccurred + "," + unexpectedSoundOccurred + "," + unexpectedSoundPosition + ","
-            + unexpectedSoundEar + "," + unexpectedDescription + "," + trackedBaseColor + "," + 
+            + unexpectedSoundEar + "," + unexpectedSoundOption + "," + unexpectedDescription + "," + trackedBaseColor + "," + 
             actualBaseColor + "," + correctTracked + "," + logDate + "," + logTime;
 
         using ( System.IO.StreamWriter w = System.IO.File.AppendText(Application.dataPath + "/.." + "/Assets/IO/Experiment Data.csv")) {

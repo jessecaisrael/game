@@ -47,7 +47,7 @@ public class InstructionGUI : MonoBehaviour {
 			}
 
             GUILayout.Label("\n\n For the <b>second task</b>, you will hear a series of sounds that differ in pitch. \n\n " +
-                "<b>Your tasks are to:</b> \n 1.) Listen for the target sound.  This sound is played at a <i>higher pitch</i> than the other sounds.\n " +
+                "<b>Your tasks are to:</b> \n 1.) Listen for the target sound.  This sound will play at a <i>higher pitch</i> than the other sounds.\n " +
                 "2.) At the end of each trial, you will be asked to note the presence or absence of the target sound.\n\n",
                 paragraphStyle, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(false));
 
@@ -55,12 +55,9 @@ public class InstructionGUI : MonoBehaviour {
                 AudioManager.Instance().PlayOddball();
             } 
             if (GUILayout.Button("Click to Hear Distractor Sound 1")) {
-                AudioManager.Instance().PlayStdSound1();
-            }
-            if (GUILayout.Button("Click to Hear Distractor Sound 2")) {
                 AudioManager.Instance().PlayStdSound2();
             }
-            if (GUILayout.Button("Click to Hear Distractor Sound 3")) {
+            if (GUILayout.Button("Click to Hear Distractor Sound 2")) {
                 AudioManager.Instance().PlayStdSound3();
             }
 
