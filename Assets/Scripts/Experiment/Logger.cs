@@ -49,7 +49,7 @@ public class Logger : MonoBehaviour {
 
         if (observedUnexpected == unexpectedPuckChgOccurred && observedUnexpected == unexpectedSoundOccurred)
             correctUnexpected = "all";
-        else if (observedUnexpected == "yes" && (observedUnexpected == unexpectedPuckChgOccurred || observedUnexpected == unexpectedSoundOccurred))
+        else if (observedUnexpected == unexpectedPuckChgOccurred || observedUnexpected == unexpectedSoundOccurred)
             correctUnexpected = "partial";
         else correctUnexpected = "none";
 
