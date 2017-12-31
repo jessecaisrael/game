@@ -208,17 +208,17 @@ public class ExperimentDriver : MonoBehaviour {
             AudioManager.Instance().SetUnexpectedEar(currentCondition.unexpectedSoundLocale);
             AudioManager.Instance().SetUnexpectedSoundCondition(currentCondition.unexpectedSoundOption);
 
-           /* Debug.Log("currentCondition.oddballPos: " + currentCondition.oddballPos + " currentCondition.oddballLocale: " + currentCondition.oddballLocale + "\n");
-            Debug.Log("logger.oddballPosition: " + logger.oddballPosition + " logger.oddballEar: " + logger.oddballEar + "\n");
-            Debug.Log("AudioManager::GetOddballPos(): " + AudioManager.Instance().GetOddballPosition() + " AudioManager::GetOddballEar: " + AudioManager.Instance().GetOddballEar() + "\n\n");
+            //Debug.Log("currentCondition.oddballPos: " + currentCondition.oddballPos + " currentCondition.oddballLocale: " + currentCondition.oddballLocale + "\n");
+            //Debug.Log("logger.oddballPosition: " + logger.oddballPosition + " logger.oddballEar: " + logger.oddballEar + "\n");
+            //Debug.Log("AudioManager::GetOddballPos(): " + AudioManager.Instance().GetOddballPosition() + " AudioManager::GetOddballEar: " + AudioManager.Instance().GetOddballEar() + "\n\n");
 
-            Debug.Log("currentCondition.unexpectedSoundPos: " + currentCondition.unexpectedSoundPos + " currentCondition.unexpectedSoundLocale: " + currentCondition.unexpectedSoundLocale + "\n");
-            Debug.Log("logger.unexpectedSoundPosition: " + logger.unexpectedSoundPosition + " logger.unexpectedSoundEar: " + logger.unexpectedSoundEar + "\n");
-            Debug.Log("AudioManager::GetUnexpectedSoundPos(): " + AudioManager.Instance().GetUnexpectedSoundPos() + " AudioManager::GetUnexpectedSoundEar(): " + AudioManager.Instance().GetUnexpectedSoundEar() + "\n\n"); */
+            //Debug.Log("currentCondition.unexpectedSoundPos: " + currentCondition.unexpectedSoundPos + " currentCondition.unexpectedSoundLocale: " + currentCondition.unexpectedSoundLocale + "\n");
+            //Debug.Log("logger.unexpectedSoundPosition: " + logger.unexpectedSoundPosition + " logger.unexpectedSoundEar: " + logger.unexpectedSoundEar + "\n");
+            //Debug.Log("AudioManager::GetUnexpectedSoundPos(): " + AudioManager.Instance().GetUnexpectedSoundPos() + " AudioManager::GetUnexpectedSoundEar(): " + AudioManager.Instance().GetUnexpectedSoundEar() + "\n\n"); */
         }
         else {
-            //Change to call the FullAttentionDriver.cs - this will be similar to PracticeDriver except the unexpected stimuli will occur
-            //Then from FullAttentionDriver call FullAttentionPosttaskGUI which will also call ExperimentCompleteGUI there
+            //Move to the full attention trial after the main experiment block completes
+            ActiveConditionSingleton.fullAttentionReady = true;
 			gameObject.GetComponent<FullAttentionPretaskGUI>().enabled = true;
 			Destroy(this);
 		}

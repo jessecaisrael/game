@@ -39,38 +39,40 @@ public class PosttaskGUI : MonoBehaviour {
 		GUILayout.BeginArea (CenteredRect ((int)(Screen.width / 1.25), (int)(Screen.height / 1.25)));
 		{//block for organization
 
-			switch(ExperimentSettings.responseType)
-			{
-			case ExperimentSettings.ResponseType.Recall:
-				GUILayout.BeginHorizontal ();  //v6: added this back //v3: Removed recall of transfer question
-				GUILayout.Label ("How many transfers did you count?", labelStyle);
-				mentalTransferCountString = GUILayout.TextField (mentalTransferCountString, 3, textFieldStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("00000")).x));
-				GUILayout.EndHorizontal ();
-				
-				GUILayout.BeginHorizontal ();
-				GUILayout.Label ("How confident are you in your transfer count for this trial?", labelStyle);
-				transferConfidence = (int)GUILayout.HorizontalSlider((float)transferConfidence, 0f, 100f, sliderStyle, GUI.skin.horizontalSliderThumb, GUILayout.Width (200));
-				GUILayout.Label (transferConfidence.ToString()+"%", labelStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("100%")).x));
-				GUILayout.EndHorizontal ();
-				break;
-			case ExperimentSettings.ResponseType.Spacebar:
-				GUILayout.BeginHorizontal ();
-				GUILayout.Label ("How confident are you that you recorded the correct number of transfers (by hitting the spacebar) during this trial?", labelStyle);
-				transferConfidence = (int)GUILayout.HorizontalSlider((float)transferConfidence, 0f, 100f, sliderStyle, GUI.skin.horizontalSliderThumb, GUILayout.Width (200));
-				GUILayout.Label (transferConfidence.ToString()+"%", labelStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("100%")).x));
-				GUILayout.EndHorizontal ();
-				break;
-			}
+            if (!ActiveConditionSingleton.fullAttentionReady) {
+                switch (ExperimentSettings.responseType)
+                {
+                    case ExperimentSettings.ResponseType.Recall:
+                        GUILayout.BeginHorizontal();  //v6: added this back //v3: Removed recall of transfer question
+                        GUILayout.Label("How many transfers did you count?", labelStyle);
+                        mentalTransferCountString = GUILayout.TextField(mentalTransferCountString, 3, textFieldStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("00000")).x));
+                        GUILayout.EndHorizontal();
 
-			GUILayout.BeginHorizontal (); //v3: Added new question
-			GUILayout.Label ("Which base color target puck were you tracking?", labelStyle);
-			trackedBaseColor = GUILayout.Toolbar (trackedBaseColor, new string[]{"black","white"});
-			GUILayout.EndHorizontal ();
+                        GUILayout.BeginHorizontal();
+                        GUILayout.Label("How confident are you in your transfer count for this trial?", labelStyle);
+                        transferConfidence = (int)GUILayout.HorizontalSlider((float)transferConfidence, 0f, 100f, sliderStyle, GUI.skin.horizontalSliderThumb, GUILayout.Width(200));
+                        GUILayout.Label(transferConfidence.ToString() + "%", labelStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("100%")).x));
+                        GUILayout.EndHorizontal();
+                        break;
+                    case ExperimentSettings.ResponseType.Spacebar:
+                        GUILayout.BeginHorizontal();
+                        GUILayout.Label("How confident are you that you recorded the correct number of transfers (by hitting the spacebar) during this trial?", labelStyle);
+                        transferConfidence = (int)GUILayout.HorizontalSlider((float)transferConfidence, 0f, 100f, sliderStyle, GUI.skin.horizontalSliderThumb, GUILayout.Width(200));
+                        GUILayout.Label(transferConfidence.ToString() + "%", labelStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("100%")).x));
+                        GUILayout.EndHorizontal();
+                        break;
+                }
 
-            GUILayout.BeginHorizontal(); //v: Added new question for auditory task
-            GUILayout.Label("Was the target sound presented during the task?", labelStyle);
-            oddballSoundChoice = GUILayout.Toolbar(oddballSoundChoice, new string[] { "no", "yes" });
-            GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal(); //v3: Added new question
+                GUILayout.Label("Which base color target puck were you tracking?", labelStyle);
+                trackedBaseColor = GUILayout.Toolbar(trackedBaseColor, new string[] { "black", "white" });
+                GUILayout.EndHorizontal();
+
+                GUILayout.BeginHorizontal(); //Added new question for auditory task
+                GUILayout.Label("Was the target sound presented during the task?", labelStyle);
+                oddballSoundChoice = GUILayout.Toolbar(oddballSoundChoice, new string[] { "no", "yes" });
+                GUILayout.EndHorizontal();
+            }
             
             GUILayout.BeginHorizontal ();  //v4: Add back option question if saw unexpected.
 			GUILayout.Label ("Did you notice anything unexpected?", labelStyle);
@@ -83,10 +85,10 @@ public class PosttaskGUI : MonoBehaviour {
 			GUILayout.Label (unexpectedConfidence.ToString()+"%", labelStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("100%")).x));
 			GUILayout.EndHorizontal ();
 
-			/*GUILayout.BeginHorizontal ();  //v7: Add time question
-			GUILayout.Label ("How long (in seconds) do you think the previous trial was?", labelStyle);
-			mentalTrialTime = GUILayout.TextField (mentalTrialTime, 3, textFieldStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("00000")).x));
-			GUILayout.EndHorizontal ();*/
+			//GUILayout.BeginHorizontal ();  //v7: Add time question
+			//GUILayout.Label ("How long (in seconds) do you think the previous trial was?", labelStyle);
+			//mentalTrialTime = GUILayout.TextField (mentalTrialTime, 3, textFieldStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("00000")).x));
+			//GUILayout.EndHorizontal ();
 
 			if (unexpectedChoice == 1) {
 
@@ -106,7 +108,8 @@ public class PosttaskGUI : MonoBehaviour {
 
 			if( GUILayout.Button("Click to Continue to Next Trial")) {
 				if( ValidateInput()) {
-					LogResponses();
+                    if(!ActiveConditionSingleton.fullAttentionReady)
+                        LogResponses();
 					ActiveConditionSingleton.complete = true;
 					Destroy(this);
 				}
@@ -167,43 +170,50 @@ public class PosttaskGUI : MonoBehaviour {
 		warningText = "";
 		bool valid = true;
 
-		switch(ExperimentSettings.responseType)
-		{
-		case ExperimentSettings.ResponseType.Recall:
-			int mentalTransferCount = 0;
-			if (!int.TryParse (mentalTransferCountString, out mentalTransferCount) || mentalTransferCount < 0) {
-				valid = false;
-				warningText += "Transfer count must be a positive integer.\n";
-			}
-			break;
-		case ExperimentSettings.ResponseType.Spacebar:
-			if (spacebarTransferCount < 0) {
-				valid = false;
-				warningText += "Transfer count must be a positive integer.\n";
-			}
-			break;
-		}
+        if (!ActiveConditionSingleton.fullAttentionReady)
+        {
+            switch (ExperimentSettings.responseType)
+            {
+                case ExperimentSettings.ResponseType.Recall:
+                    int mentalTransferCount = 0;
+                    if (!int.TryParse(mentalTransferCountString, out mentalTransferCount) || mentalTransferCount < 0)
+                    {
+                        valid = false;
+                        warningText += "Transfer count must be a positive integer.\n";
+                    }
+                    break;
+                case ExperimentSettings.ResponseType.Spacebar:
+                    if (spacebarTransferCount < 0)
+                    {
+                        valid = false;
+                        warningText += "Transfer count must be a positive integer.\n";
+                    }
+                    break;
+            }
 
-		if (trackedBaseColor == -1) {
-			valid = false;
-			warningText += "You must choose black or white.\n";
-		}
+            if (trackedBaseColor == -1)
+            {
+                valid = false;
+                warningText += "You must choose black or white.\n";
+            }
 
-		if (unexpectedChoice == -1) {  //v4: added back  //v2:  removed validation logic for unexpectedChoice
+            if (oddballSoundChoice == -1)
+            { //Added in for auditory task
+                valid = false;
+                warningText += "You must choose yes or no\n";
+            }
+        }
+
+        if (unexpectedChoice == -1) {  //v4: added back  //v2:  removed validation logic for unexpectedChoice
 			valid = false;
 			warningText += "You must choose yes or no\n";
 		}
 
-        if (oddballSoundChoice == -1) { //Added in for auditory task
-            valid = false;
-            warningText += "You must choose yes or no\n";
-        }
-
-       /* int observedTrialTime = 0;
-		if (!int.TryParse (mentalTrialTime, out observedTrialTime) || observedTrialTime < 0) {
-			valid = false;
-			warningText += "Estimated trial time must be a positive integer.\n";
-		} */
+        //int observedTrialTime = 0;
+		//if (!int.TryParse (mentalTrialTime, out observedTrialTime) || observedTrialTime < 0) {
+			//valid = false;
+			//warningText += "Estimated trial time must be a positive integer.\n";
+		//} 
 
 		if (unexpectedChoice == 1 && unexpectedDescription == "") {
 			valid = false;

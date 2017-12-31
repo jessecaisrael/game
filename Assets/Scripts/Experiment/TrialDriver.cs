@@ -178,8 +178,8 @@ public class TrialDriver : MonoBehaviour {
 				}
                 AudioManager.Instance().StopBGM();
                 gameObject.GetComponent<PosttaskGUI>().enabled = true;
-				gameObject.GetComponent<PosttaskGUI>().spacebarTransferCount = markedTransfers;
-			}
+                gameObject.GetComponent<PosttaskGUI>().spacebarTransferCount = markedTransfers;
+            }
 		}
 	}
 

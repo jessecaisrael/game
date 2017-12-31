@@ -17,6 +17,7 @@ public static class ActiveConditionSingleton {
     public static Texture2D blackBasicTexture; //= (Texture2D)Resources.Load("BlackBG");
 
     public static bool complete;
+    public static bool fullAttentionReady;
 
     //added for auditory conditions
     public static bool oddballOccurs;

@@ -22,15 +22,15 @@ public class FullAttentionPretaskGUI : MonoBehaviour
         {//block for organization
             GUILayout.Label("Post Experiment Task", titleStyle);
 
-            string instructionsText = "In the next screen, you will see the same moving pucks and hear the same sounds that were presented to you previously during this experiment.  For this task, the instructions are <b>different</b>. Instead of tracking pucks and listening for the high pitch sound, you will look and listen for " +
-                        "things that are irrelevant to your previous tasks. Please take mental note of things that <i>different or unexpected for this task</i>. You will answer questions about this task afterwards. ";               
+            string instructionsText = "In the next trial, you will see the same moving pucks and hear the same sounds that were presented to you previously during this experiment.  For this task, the instructions are <b>different</b>. Instead of tracking pucks and listening for the high pitch sound, you will look and listen for " +
+                        "things that are irrelevant to your previous tasks. Please take mental note of things that are <i>different or unexpected for this task</i>. You will answer questions about this task afterwards. ";               
             GUILayout.Label(instructionsText, paragraphStyle, GUILayout.ExpandWidth(true));
 
             GUILayout.Space(20);
 
             if (GUILayout.Button("Click to Continue"))
             {
-                gameObject.GetComponent<ExperimentCompleteGUI>().enabled = true;
+                gameObject.GetComponent<FullAttentionDriver>().enabled = true;
                 Destroy(this);
             }
 

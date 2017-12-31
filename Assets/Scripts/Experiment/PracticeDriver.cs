@@ -27,6 +27,7 @@ public class PracticeDriver : MonoBehaviour {
         ActiveConditionSingleton.oddballOccurs = true;
         ActiveConditionSingleton.oddballPos = 10;
         ActiveConditionSingleton.oddballEar = -1;
+        ActiveConditionSingleton.fullAttentionReady = false;
         
         //Set Condition IVs to log
         Logger logger = (Logger)gameObject.GetComponent<Logger>();

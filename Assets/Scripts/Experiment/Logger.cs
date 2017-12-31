@@ -89,5 +89,6 @@ public class Logger : MonoBehaviour {
         }
 	}
 
+    //Need to add method to log fullattention trial here
 
 }

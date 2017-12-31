@@ -107,3 +107,12 @@ pid,trial,scenario,aPuckColor,aTargetColor,uUnexpectedTargetColor,unexpectedTime
 111,31,41,white,red,black,15,0,2,2,no,50,no,1,1,no,yes,all,50,yes,yes,10,-1,2,green changed,white,white,yes,12/29/2017,15:21:10
 111,32,47,white,red,red,15,0,4,4,no,50,no,9,-1,no,no,none,50,yes,no,9,-1,2,,black,white,no,12/29/2017,15:21:42
 111,33,64,black,green,green,10,0,2,2,no,50,yes,12,-1,no,no,none,50,no,yes,6,-1,1,,black,black,yes,12/29/2017,15:22:13
+6,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,19:16:02
+34,1,1,white,red,red,5,3,4,1,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,19:24:07
+61,1,1,white,red,red,5,1,4,3,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,19:28:24
+77,1,1,white,red,red,5,3,4,1,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,19:44:56
+9,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,19:53:08
+3,1,1,white,red,red,5,4,4,0,yes,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,22:33:08
+74,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,22:37:48
+63,1,1,white,red,red,5,4,4,0,yes,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,22:43:33
+63,2,57,white,green,green,10,2,9,7,no,50,yes,10,1,no,no,none,50,yes,yes,2,-1,2,,black,white,no,12/30/2017,22:44:09
