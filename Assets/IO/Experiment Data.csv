@@ -116,3 +116,8 @@ pid,trial,scenario,aPuckColor,aTargetColor,uUnexpectedTargetColor,unexpectedTime
 74,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,22:37:48
 63,1,1,white,red,red,5,4,4,0,yes,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,22:43:33
 63,2,57,white,green,green,10,2,9,7,no,50,yes,10,1,no,no,none,50,yes,yes,2,-1,2,,black,white,no,12/30/2017,22:44:09
+45,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,1/3/2018,10:11:59
+199,1,1,white,red,red,5,5,4,-1,no,50,yes,10,-1,yes,no,all,50,no,no,7,1,1,,white,white,yes,1/8/2018,7:25:19
+199,2,25,black,red,white,15,2,3,1,no,50,no,8,1,no,no,partial,50,yes,no,6,-1,1,,black,black,yes,1/8/2018,7:25:51
+199,3,29,black,red,black,10,2,2,0,yes,50,yes,9,1,yes,yes,all,75,yes,yes,5,1,1,sound heard,black,black,yes,1/8/2018,7:26:26
+199,4,11,black,green,green,5,4,4,0,yes,50,yes,9,-1,yes,yes,all,50,yes,yes,2,-1,1,heard it all before,black,black,yes,1/8/2018,7:27:01
