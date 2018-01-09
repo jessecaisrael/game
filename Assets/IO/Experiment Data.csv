@@ -121,3 +121,26 @@ pid,trial,scenario,aPuckColor,aTargetColor,uUnexpectedTargetColor,unexpectedTime
 199,2,25,black,red,white,15,2,3,1,no,50,no,8,1,no,no,partial,50,yes,no,6,-1,1,,black,black,yes,1/8/2018,7:25:51
 199,3,29,black,red,black,10,2,2,0,yes,50,yes,9,1,yes,yes,all,75,yes,yes,5,1,1,sound heard,black,black,yes,1/8/2018,7:26:26
 199,4,11,black,green,green,5,4,4,0,yes,50,yes,9,-1,yes,yes,all,50,yes,yes,2,-1,1,heard it all before,black,black,yes,1/8/2018,7:27:01
+11,1,1,white,red,red,5,2,2,0,yes,50,yes,10,-1,yes,yes,partial,50,no,yes,8,1,2,d,white,white,yes,1/8/2018,20:29:00
+11,2,65,black,green,black,5,4,5,1,no,50,yes,5,-1,no,no,partial,50,no,yes,3,-1,2,,black,black,yes,1/8/2018,20:29:31
+11,3,13,black,red,red,15,3,4,1,no,50,yes,3,-1,yes,yes,partial,50,no,yes,4,-1,2,e,black,black,yes,1/8/2018,20:30:03
+11,4,16,white,red,red,15,2,3,1,no,50,yes,5,-1,no,yes,all,50,yes,yes,6,1,2,d,white,white,yes,1/8/2018,20:30:37
+11,5,19,black,green,black,5,4,4,0,yes,50,yes,6,-1,yes,no,all,50,no,no,2,1,1,,black,black,yes,1/8/2018,20:31:08
+11,6,15,white,red,red,5,2,2,0,yes,50,no,10,-1,no,no,all,50,no,no,4,1,2,,white,white,yes,1/8/2018,20:31:38
+11,7,67,black,green,white,15,2,2,0,yes,50,yes,12,-1,yes,no,all,50,no,no,4,-1,2,,black,black,yes,1/8/2018,20:32:08
+11,8,70,black,green,green,10,2,2,0,yes,50,no,9,-1,no,no,all,50,no,no,2,-1,1,,black,black,yes,1/8/2018,20:32:38
+11,9,29,black,red,white,15,2,2,0,yes,50,no,12,1,no,yes,all,50,yes,yes,4,-1,2,ss,black,black,yes,1/8/2018,20:33:13
+11,10,58,black,green,green,5,4,5,1,no,50,yes,4,1,yes,no,partial,50,yes,no,1,-1,1,,black,black,yes,1/8/2018,20:33:48
+11,11,4,black,red,white,10,3,4,1,no,50,yes,3,1,yes,no,partial,50,no,yes,7,-1,1,,black,black,yes,1/8/2018,20:34:23
+11,12,42,black,red,white,10,2,3,1,no,50,no,3,-1,no,no,partial,50,yes,no,4,-1,2,,black,black,yes,1/8/2018,20:34:59
+11,13,27,white,red,red,5,1,3,2,no,50,no,9,1,no,no,partial,50,no,yes,1,1,2,,black,white,no,1/8/2018,20:48:36
+11,14,28,black,red,black,10,6,5,-1,no,0,no,8,1,yes,no,partial,50,no,yes,5,-1,1,,black,black,yes,1/8/2018,20:49:37
+11,15,51,white,red,white,15,2,1,-1,no,50,yes,11,1,yes,no,all,50,no,no,8,1,2,,white,white,yes,1/8/2018,20:50:32
+11,16,26,black,green,black,5,4,4,0,yes,50,no,9,1,yes,yes,partial,50,no,yes,7,1,1,random sound not the target or distractor,black,black,yes,1/8/2018,20:51:26
+11,17,53,black,green,black,15,5,7,2,no,50,yes,13,-1,yes,no,partial,50,yes,no,6,-1,2,,black,black,yes,1/8/2018,20:52:04
+6,1,1,white,red,red,5,2,2,0,yes,50,yes,10,-1,yes,no,partial,50,no,yes,8,1,2,,white,white,yes,1/8/2018,21:05:17
+76,1,1,white,red,red,5,2,2,0,yes,68,yes,10,-1,yes,no,all,50,no,no,8,1,2,,white,white,yes,1/9/2018,11:10:52
+4,1,1,white,red,red,5,2,2,0,yes,50,yes,10,-1,yes,no,all,50,no,no,8,1,2,,white,white,yes,1/9/2018,11:12:26
+4,2,23,white,red,white,15,6,6,0,yes,50,yes,12,-1,yes,no,all,50,no,no,1,-1,2,,white,white,yes,1/9/2018,11:12:59
+4,3,60,black,green,white,5,2,2,0,yes,50,no,13,1,no,yes,partial,50,yes,no,3,-1,2,red puck disappeared,black,black,yes,1/9/2018,11:13:37
+4,4,44,white,green,white,15,6,8,2,no,50,yes,1,1,yes,no,partial,50,yes,no,5,-1,1,,white,white,yes,1/9/2018,11:14:06

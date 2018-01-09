@@ -18,12 +18,12 @@ public class PracticeDriver : MonoBehaviour {
 		ActiveConditionSingleton.blackTargetTexture = (Texture2D)Resources.Load ("BlackBgGreenCenter");
 		ActiveConditionSingleton.blackChangeTexture = (Texture2D)Resources.Load ("BlackBgRedCenter");
 		ActiveConditionSingleton.unexpectedSegment = ActiveConditionSingleton.Thirds.Five;
-		ActiveConditionSingleton.unexpectedPuckChgOccurs = false;
+		ActiveConditionSingleton.unexpectedPuckChgOccurs = true;
 		ActiveConditionSingleton.simulationId = 1; //if you have more than 1 practice trial you need to adjust simulationId starting val in ExperimentDriver
-        ActiveConditionSingleton.unexpectedSoundOccurs = false;
-        ActiveConditionSingleton.unexpectedSoundPosition = 7;
+        ActiveConditionSingleton.unexpectedSoundOccurs = true;
+        ActiveConditionSingleton.unexpectedSoundPosition = 5;
         ActiveConditionSingleton.unexpectedSoundEar = 1;
-        ActiveConditionSingleton.unexpectedSoundOption = 1;
+        ActiveConditionSingleton.unexpectedSoundOption = 2;
         ActiveConditionSingleton.oddballOccurs = true;
         ActiveConditionSingleton.oddballPos = 10;
         ActiveConditionSingleton.oddballEar = -1;

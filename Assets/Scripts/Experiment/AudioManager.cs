@@ -26,9 +26,9 @@ public class AudioManager : MonoBehaviour
     private int surpriseEar = -99;
 
     int[] earSettings = new int[] { -1, 1 };
-    //ISI durations for 13 tones, add more if more tones need to play
+    //ISI durations for 14 tones, add more if more tones need to play
     private List<float> isi = new List<float> { 0.9f, 1.2f, 1.0f, 0.9f,
-        1.7f, 1.5f, 1.0f, 1.2f, 1.5f, 1.0f, 1.7f, 1.5f, 0.9f };
+        1.7f, 1.5f, 1.0f, 1.2f, 1.5f, 1.0f, 1.7f, 1.5f, 0.9f, 1.0f};
 
     //Returns the same instance of singleton class
     public static AudioManager Instance() {
@@ -92,7 +92,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM() {
         if(bgmSource != null) {
-            bgmSource.PlayOneShot(bgmClip, 0.3f);
+            bgmSource.PlayOneShot(bgmClip, 0.55f);
         }
         else throw new UnityException("bgmSource is NULL! - PlayBGM() failed");
     }
@@ -161,9 +161,9 @@ public class AudioManager : MonoBehaviour
                 //Randomize spatial position of unexpected tone
                 unexpectedSource.panStereo = surpriseEar;
                 if (unexpectedSpeed == 1)
-                    unexpectedSource.PlayOneShot(unexpectedClip1, 0.3f);
+                    unexpectedSource.PlayOneShot(unexpectedClip1, 0.4f);
                 else if (unexpectedSpeed == 2)
-                    unexpectedSource.PlayOneShot(unexpectedClip2, 0.3f);
+                    unexpectedSource.PlayOneShot(unexpectedClip2, 0.4f);
             }
             if (oddballPos == index && playOddball == 1) {
                 soundSource.panStereo = oddballEar;
