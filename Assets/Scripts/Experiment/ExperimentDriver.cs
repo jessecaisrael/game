@@ -77,12 +77,12 @@ public class ExperimentDriver : MonoBehaviour {
         
         //Randomize condition order
         //This call has been moved to earlier point because Random is needed Random.InitState(gameObject.GetComponent<Logger>().pid);
-		/*for (int i=0; i < conditions.Count; i++) {
+		for (int i=0; i < conditions.Count; i++) {
 			Condition c = (Condition)conditions[i];
 			int randomIndex = Random.Range(i, conditions.Count);
 			conditions[i] = conditions[randomIndex];
 			conditions[randomIndex] = c;
-		}*/
+		}
 
 		LoadNextTrial ();
 	}
