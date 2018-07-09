@@ -33,6 +33,7 @@ public class Logger : MonoBehaviour {
     public int unexpectedSoundPosition;
     public int unexpectedSoundEar;
     public int unexpectedSoundOption;
+    public int oddballConfidence;
 
     // Use this for initialization
 	void Start () {
@@ -79,7 +80,7 @@ public class Logger : MonoBehaviour {
 		//Log
         string message = pid.ToString () + "," + trialNum++ + "," + scenario + "," + attendedPuckColor + "," + attendedTargetColor + "," + unattendedUnexpectedTargetColor + "," + unexpectedTime +
             "," + observedTransfers + "," + actualTransfers + "," + transferError + "," + correctTransfers + "," + transferConfidence + "," + oddballOccurred + 
-            "," + oddballPosition + "," + oddballEar + "," + observedOddball + "," + observedUnexpected + "," + correctUnexpected + "," + unexpectedConfidence + "," + unexpectedPuckChgOccurred + "," + unexpectedSoundOccurred + "," + unexpectedSoundPosition + ","
+            "," + oddballPosition + "," + oddballEar + "," + observedOddball + "," + oddballConfidence + "," + observedUnexpected + "," + correctUnexpected + "," + unexpectedConfidence + "," + unexpectedPuckChgOccurred + "," + unexpectedSoundOccurred + "," + unexpectedSoundPosition + ","
             + unexpectedSoundEar + "," + unexpectedSoundOption + "," + unexpectedDescription + "," + trackedBaseColor + "," + 
             actualBaseColor + "," + correctTracked + "," + logDate + "," + logTime;
 

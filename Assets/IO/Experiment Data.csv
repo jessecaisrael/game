@@ -1,146 +1,34 @@
-pid,trial,scenario,aPuckColor,aTargetColor,uUnexpectedTargetColor,unexpectedTime,observedTransfers,actualTransfers,transferError,correctTransfers,transferConfidence,oddBallOccurrence,oddBallPosition,oddballEar,observeOddball,observedUnexpected,correctUnexpected,unexpectedConfidence,unexpectedPuckChgOccurred,unexpectedSoundOccurred,unexpectedSoundPosition,unexpectedSoundEar,unexpectedSoundOption,unexpectedDescription,trackedBaseColor,actualBaseColor,baseColorCorrect,logDate,logTime
-6,1,1,white,red,red,5,3,3,0,yes,84,yes,0,0,yes,no,yes,89,no,no,0,0,,,white,white,yes,12/28/2017,11:34:05
-50,1,1,white,red,red,5,4,4,0,yes,84,yes,10,-1,yes,no,all,88,no,no,7,1,1,,white,white,yes,12/29/2017,12:19:15
-50,2,64,white,green,black,15,2,3,1,no,75,yes,12,-1,yes,yes,partial,69,no,yes,6,1,1,sound in background,white,white,yes,12/29/2017,12:20:00
-50,3,59,black,green,black,15,3,3,0,yes,71,yes,7,1,no,no,all,96,no,no,7,-1,2,,black,black,yes,12/29/2017,12:20:36
-50,4,38,black,green,white,5,1,1,0,yes,83,no,8,1,no,yes,all,81,yes,yes,3,1,1,sound,black,black,yes,12/29/2017,12:21:15
-50,5,47,black,red,red,5,2,3,1,no,50,no,4,-1,no,no,all,80,no,no,11,-1,1,,black,black,yes,12/29/2017,12:21:50
-50,6,40,white,red,red,15,3,3,0,yes,50,no,10,1,no,yes,all,87,yes,yes,6,-1,1,the green puck changed to red so there were 2 red pucks,black,white,no,12/29/2017,12:24:02
-50,7,18,white,red,white,10,2,2,0,yes,67,yes,7,-1,no,yes,all,73,yes,yes,10,-1,2,sound and green puck changed to black basic puck,white,white,yes,12/29/2017,12:24:59
-50,8,13,black,green,white,5,5,3,-2,no,71,yes,10,1,no,yes,all,76,yes,yes,8,1,1,sound heeard,black,black,yes,12/29/2017,12:25:38
-50,9,3,black,red,black,10,4,6,2,no,50,no,4,-1,no,yes,partial,72,no,yes,9,-1,2,fast chime sound,black,black,yes,12/29/2017,12:26:50
-50,10,65,white,green,white,5,3,3,0,yes,69,yes,4,-1,no,yes,partial,50,no,yes,8,1,2,sound hey,white,white,yes,12/29/2017,12:28:09
-50,11,8,white,red,red,5,3,3,0,yes,17,no,2,1,no,no,partial,50,yes,no,10,1,1,,white,white,yes,12/29/2017,12:28:43
-50,12,41,white,red,red,10,2,4,2,no,65,yes,2,-1,no,no,partial,50,yes,no,9,-1,2,,white,white,yes,12/29/2017,12:29:14
-50,13,15,white,green,green,10,0,0,0,yes,27,no,5,1,no,no,partial,50,no,yes,5,1,2,,white,white,yes,12/29/2017,12:29:45
-50,14,30,white,red,black,5,4,5,1,no,50,yes,7,-1,yes,yes,partial,89,no,yes,5,1,1,sound,white,white,yes,12/29/2017,12:30:47
-50,15,62,black,green,black,15,2,3,1,no,77,no,8,-1,no,no,partial,50,yes,no,9,-1,1,,black,black,yes,12/29/2017,12:31:19
-50,16,24,black,red,black,10,2,2,0,yes,50,no,12,-1,no,yes,all,82,yes,yes,8,-1,2,quick sound,black,black,yes,12/29/2017,12:31:58
-50,17,66,black,green,white,5,4,4,0,yes,78,yes,5,-1,no,no,all,50,no,no,8,-1,1,,black,black,yes,12/29/2017,12:32:29
-50,18,21,white,green,green,5,5,4,-1,no,68,no,1,-1,no,yes,all,71,yes,yes,8,1,2,sound,white,white,yes,12/29/2017,12:33:06
-50,19,57,black,green,green,15,2,2,0,yes,75,yes,0,-1,no,yes,all,50,yes,yes,7,-1,2,s,black,black,yes,12/29/2017,12:33:48
-50,20,45,black,red,red,10,2,3,1,no,72,yes,11,-1,no,yes,partial,85,no,yes,11,1,2,alarm,black,black,yes,12/29/2017,12:34:54
-50,21,42,white,red,white,5,3,4,1,no,75,yes,5,-1,yes,no,partial,50,yes,no,10,1,1,,white,white,yes,12/29/2017,12:35:34
-50,22,23,white,red,white,15,4,4,0,yes,67,no,0,-1,yes,no,partial,50,yes,no,11,-1,2,,white,white,yes,12/29/2017,12:36:06
-50,23,10,white,red,white,15,4,5,1,no,65,yes,1,-1,yes,yes,all,79,yes,yes,6,1,1,a lot of changed: puck changed from green to red and i heard a sound,white,white,yes,12/29/2017,12:36:57
-50,24,4,white,red,black,5,4,5,1,no,73,yes,8,1,yes,no,all,50,no,no,3,1,1,,white,white,yes,12/29/2017,12:37:32
-50,25,51,white,red,black,10,3,3,0,yes,78,yes,1,1,yes,no,all,65,no,no,4,-1,2,,white,white,yes,12/29/2017,12:38:06
-50,26,43,white,red,white,15,3,3,0,yes,73,no,10,-1,yes,yes,partial,99,no,yes,3,-1,1,sound was played in background,white,white,yes,12/29/2017,12:38:47
-50,27,63,black,green,green,15,4,4,0,yes,81,no,11,-1,no,yes,partial,79,yes,no,8,1,2,the other puck changed color during the experiment,black,black,yes,12/29/2017,12:39:30
-50,28,9,black,green,green,15,1,1,0,yes,50,yes,11,1,yes,yes,partial,50,yes,no,2,1,1,pucks,black,black,yes,12/29/2017,12:40:05
-50,29,69,white,green,green,10,3,2,-1,no,80,no,11,1,no,no,all,50,no,no,9,-1,2,,white,white,yes,12/29/2017,12:40:36
-50,30,32,white,red,black,15,4,4,0,yes,85,no,3,1,yes,no,all,50,no,no,10,1,2,,white,white,yes,12/29/2017,12:41:11
-50,31,2,white,green,green,5,4,8,4,no,62,yes,8,-1,yes,no,partial,50,yes,no,6,-1,2,,white,white,yes,12/29/2017,12:42:03
-50,32,70,white,green,green,15,0,3,3,no,70,no,7,1,no,no,all,87,no,no,11,-1,1,,white,white,yes,12/29/2017,12:42:39
-50,33,68,white,green,black,15,4,4,0,yes,80,no,3,1,no,no,partial,3,no,yes,4,1,1,,white,white,yes,12/29/2017,12:43:22
-51,1,1,white,red,red,5,4,4,0,yes,62,yes,10,-1,yes,no,all,50,no,no,7,1,1,,white,white,yes,12/29/2017,12:55:14
-51,2,14,white,green,white,15,4,7,3,no,50,no,10,1,no,no,all,50,no,no,6,-1,2,,white,white,yes,12/29/2017,12:56:02
-51,3,66,white,green,white,10,1,3,2,no,86,yes,0,1,yes,no,all,50,no,no,5,-1,1,,white,white,yes,12/29/2017,12:56:34
-51,4,59,black,green,white,5,3,3,0,yes,79,yes,10,-1,yes,no,partial,50,yes,no,7,-1,2,,black,black,yes,12/29/2017,12:57:07
-51,5,16,black,red,white,5,4,5,1,no,50,yes,8,-1,no,yes,partial,82,no,yes,11,1,1,ended with sound that was different,black,black,yes,12/29/2017,12:58:09
-51,6,21,white,green,black,5,4,9,5,no,50,no,12,1,no,no,partial,81,yes,no,7,1,2,,white,white,yes,12/29/2017,12:58:41
-51,7,27,white,red,black,5,1,1,0,yes,24,no,4,-1,no,yes,all,95,yes,yes,3,-1,1,the other puck changed colors while i watched the one instructioned and i heard a sound,white,white,yes,12/29/2017,12:59:40
-24,1,1,white,red,red,5,3,4,1,no,50,yes,10,-1,yes,no,all,50,no,no,7,1,1,,white,white,yes,12/29/2017,14:18:53
-100,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/29/2017,14:29:51
-100,2,15,black,red,red,5,0,1,1,no,50,no,1,1,no,no,none,50,yes,yes,7,-1,2,,black,black,yes,12/29/2017,14:30:38
-100,3,64,white,green,green,10,0,3,3,no,50,yes,9,1,no,no,none,50,no,yes,4,1,1,,black,white,no,12/29/2017,14:31:14
-100,4,16,white,green,black,15,0,3,3,no,50,no,3,1,no,no,all,50,no,no,2,-1,2,,black,white,no,12/29/2017,14:31:59
-100,5,61,white,green,white,5,0,3,3,no,50,no,8,1,no,yes,all,50,yes,yes,2,-1,2,puck change,black,white,no,12/29/2017,14:32:33
-100,6,65,white,green,black,10,0,4,4,no,50,yes,3,-1,no,no,none,50,no,yes,8,-1,2,,black,white,no,12/29/2017,14:33:04
-100,7,53,black,green,green,10,0,7,7,no,50,no,9,-1,no,no,none,50,yes,yes,7,-1,1,,black,black,yes,12/29/2017,14:34:03
-100,8,34,white,red,red,10,0,6,6,no,50,no,1,-1,no,no,none,50,no,yes,9,-1,1,,black,white,no,12/29/2017,14:35:13
-100,9,46,white,red,black,5,0,3,3,no,50,no,4,-1,no,no,none,50,yes,no,3,1,1,,black,white,no,12/29/2017,14:36:09
-100,10,42,black,red,white,15,0,2,2,no,50,no,4,-1,no,no,none,50,yes,no,9,1,2,,black,black,yes,12/29/2017,14:37:03
-100,11,22,white,red,black,15,0,6,6,no,50,yes,2,1,no,no,none,50,yes,no,3,-1,2,,black,white,no,12/29/2017,14:37:36
-100,12,69,white,green,white,5,0,2,2,no,50,no,5,-1,no,no,none,50,no,yes,4,1,2,,black,white,no,12/29/2017,14:38:12
-100,13,62,black,green,green,10,0,3,3,no,50,no,10,-1,no,no,none,50,yes,no,3,1,1,,black,black,yes,12/29/2017,14:38:49
-100,14,50,white,red,white,10,0,3,3,no,50,yes,2,-1,no,no,all,50,no,no,3,1,1,,black,white,no,12/29/2017,14:39:26
-100,15,59,black,green,green,15,0,2,2,no,50,yes,7,-1,no,no,none,50,yes,no,2,-1,2,,black,black,yes,12/29/2017,14:40:19
-100,16,40,white,red,white,15,0,2,2,no,50,no,12,-1,no,no,none,50,yes,yes,4,1,1,,black,white,no,12/29/2017,14:40:57
-100,17,29,white,green,green,15,0,2,2,no,50,no,4,-1,no,no,none,50,no,yes,2,-1,1,,black,white,no,12/29/2017,14:41:48
-100,18,23,black,green,green,15,0,1,1,no,50,no,8,1,no,no,none,50,yes,no,9,1,2,,black,black,yes,12/29/2017,14:42:35
-100,19,6,black,red,red,15,0,4,4,no,50,no,9,-1,no,no,all,50,no,no,7,-1,1,,black,black,yes,12/29/2017,14:43:11
-100,20,58,white,green,black,15,0,3,3,no,50,yes,7,-1,no,no,none,50,yes,no,9,1,1,,black,white,no,12/29/2017,14:44:08
-100,21,21,black,red,black,15,0,1,1,no,50,no,11,1,no,no,all,50,no,no,7,-1,2,,black,black,yes,12/29/2017,14:44:41
-100,22,2,black,red,black,15,0,2,2,no,50,yes,11,-1,no,no,none,50,yes,yes,8,1,2,,black,black,yes,12/29/2017,14:45:14
-100,23,66,black,green,green,15,0,4,4,no,50,yes,0,-1,no,no,all,50,no,no,6,1,1,,black,black,yes,12/29/2017,14:45:43
-100,24,67,black,green,white,15,0,4,4,no,50,yes,11,1,no,no,all,50,no,no,6,-1,2,,black,black,yes,12/29/2017,14:46:15
-100,25,41,black,red,black,10,0,2,2,no,50,yes,5,1,no,no,none,50,no,yes,7,1,1,,black,black,yes,12/29/2017,14:46:44
-100,26,37,white,red,black,15,0,3,3,no,50,yes,8,-1,no,no,all,50,no,no,6,-1,2,,white,white,yes,12/29/2017,14:47:15
-100,27,39,white,green,white,10,0,4,4,no,50,yes,0,1,no,no,none,50,yes,yes,3,-1,2,,black,white,no,12/29/2017,14:47:53
-100,28,11,white,red,red,10,0,4,4,no,50,yes,1,1,no,no,none,50,yes,yes,4,1,1,,black,white,no,12/29/2017,14:48:32
-100,29,70,black,green,black,15,0,2,2,no,50,no,6,-1,no,no,all,50,no,no,3,-1,1,,black,black,yes,12/29/2017,14:49:27
-100,30,47,black,red,red,15,0,5,5,no,50,yes,10,-1,no,no,none,50,no,yes,3,-1,2,,black,black,yes,12/29/2017,14:49:58
-100,31,9,white,red,black,5,0,4,4,no,50,no,3,1,no,no,none,50,no,yes,5,-1,2,,black,white,no,12/29/2017,14:50:46
-100,32,56,black,green,green,10,0,2,2,no,50,yes,12,1,no,no,none,50,yes,yes,8,1,1,,black,black,yes,12/29/2017,14:51:23
-100,33,20,black,red,white,10,0,2,2,no,50,yes,5,-1,no,no,none,50,yes,no,6,1,1,,black,black,yes,12/29/2017,14:51:57
-111,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/29/2017,15:03:37
-111,2,29,white,green,black,15,0,2,2,no,50,no,10,-1,no,no,none,50,no,yes,2,-1,2,,black,white,no,12/29/2017,15:04:16
-111,3,59,black,green,green,5,0,2,2,no,50,yes,11,1,no,no,none,50,yes,no,8,-1,2,,black,black,yes,12/29/2017,15:05:16
-111,4,20,black,red,red,10,0,3,3,no,50,no,4,1,no,no,all,50,no,no,9,-1,1,,black,black,yes,12/29/2017,15:05:57
-111,5,37,black,red,red,15,0,2,2,no,50,no,8,1,no,no,none,50,no,yes,6,-1,2,,black,black,yes,12/29/2017,15:06:29
-111,6,68,black,green,black,10,0,2,2,no,50,no,3,1,no,no,none,50,no,yes,4,1,1,,black,black,yes,12/29/2017,15:07:03
-111,7,28,black,red,black,10,0,5,5,no,50,yes,3,-1,no,no,none,50,no,yes,10,1,1,,black,black,yes,12/29/2017,15:07:35
-111,8,25,black,red,red,5,0,4,4,no,50,yes,4,1,no,no,none,50,yes,no,7,-1,1,,black,black,yes,12/29/2017,15:08:05
-111,9,5,black,red,white,10,0,0,0,yes,50,yes,11,1,no,no,none,50,yes,yes,3,-1,1,,black,black,yes,12/29/2017,15:08:41
-111,10,11,white,green,black,5,0,4,4,no,50,yes,11,-1,no,no,none,50,yes,no,8,-1,1,,black,white,no,12/29/2017,15:09:13
-111,11,32,black,green,green,10,0,5,5,no,50,yes,4,1,no,no,all,50,no,no,10,-1,2,,black,black,yes,12/29/2017,15:09:56
-111,12,65,white,green,green,15,0,4,4,no,50,yes,3,-1,no,no,none,50,no,yes,2,-1,2,,black,white,no,12/29/2017,15:10:32
-111,13,30,black,red,black,10,0,5,5,no,50,yes,6,-1,no,no,none,50,yes,yes,9,-1,2,,black,black,yes,12/29/2017,15:11:02
-111,14,60,black,green,black,15,0,2,2,no,50,no,0,-1,no,no,none,50,yes,no,5,1,2,,black,black,yes,12/29/2017,15:11:30
-111,15,56,white,green,white,15,0,1,1,no,50,yes,7,-1,no,no,none,50,yes,yes,6,1,1,,black,white,no,12/29/2017,15:12:22
-111,16,9,black,red,black,10,0,1,1,no,50,yes,9,-1,no,no,none,50,no,yes,3,1,2,,black,black,yes,12/29/2017,15:12:51
-111,17,8,black,red,white,15,0,5,5,no,50,no,0,1,no,yes,partial,50,yes,no,2,-1,1,change,black,black,yes,12/29/2017,15:13:25
-111,18,62,black,green,black,15,0,4,4,no,50,no,1,-1,no,yes,partial,50,yes,no,5,-1,1,puchs,black,black,yes,12/29/2017,15:14:00
-111,19,15,black,red,white,15,0,2,2,no,50,yes,3,1,no,no,none,50,yes,no,10,1,2,,black,black,yes,12/29/2017,15:14:30
-111,20,52,white,red,black,5,0,4,4,no,50,no,11,-1,no,no,none,50,no,yes,8,1,1,,black,white,no,12/29/2017,15:15:00
-111,21,53,white,green,green,10,0,2,2,no,50,no,4,-1,no,no,none,50,yes,yes,9,-1,1,,black,white,no,12/29/2017,15:15:32
-111,22,51,white,red,black,15,0,3,3,no,50,yes,11,-1,no,no,all,50,no,no,10,-1,2,,black,white,no,12/29/2017,15:16:10
-111,23,55,black,red,white,5,0,2,2,no,50,no,12,1,no,no,all,50,no,no,6,-1,2,,black,black,yes,12/29/2017,15:16:42
-111,24,66,white,green,black,10,0,3,3,no,50,yes,12,-1,no,no,all,50,no,no,9,1,1,,black,white,no,12/29/2017,15:17:22
-111,25,21,white,red,white,5,0,4,4,no,50,no,4,-1,no,no,none,50,yes,yes,6,1,1,,black,white,no,12/29/2017,15:17:53
-111,26,71,white,green,black,10,0,3,3,no,50,no,11,-1,no,no,all,50,no,no,8,-1,2,,white,white,yes,12/29/2017,15:18:23
-111,27,22,white,green,green,10,0,9,9,no,50,no,4,-1,no,no,all,50,no,no,5,-1,1,,black,white,no,12/29/2017,15:18:54
-111,28,10,white,green,black,15,0,3,3,no,50,yes,2,1,no,no,none,50,yes,yes,5,1,2,,black,white,no,12/29/2017,15:19:26
-111,29,24,black,green,black,10,0,2,2,no,50,no,4,1,no,no,none,50,yes,yes,5,-1,2,,black,black,yes,12/29/2017,15:20:01
-111,30,36,white,red,black,5,0,1,1,no,50,yes,7,-1,no,no,all,50,no,no,3,1,1,,black,white,no,12/29/2017,15:20:29
-111,31,41,white,red,black,15,0,2,2,no,50,no,1,1,no,yes,all,50,yes,yes,10,-1,2,green changed,white,white,yes,12/29/2017,15:21:10
-111,32,47,white,red,red,15,0,4,4,no,50,no,9,-1,no,no,none,50,yes,no,9,-1,2,,black,white,no,12/29/2017,15:21:42
-111,33,64,black,green,green,10,0,2,2,no,50,yes,12,-1,no,no,none,50,no,yes,6,-1,1,,black,black,yes,12/29/2017,15:22:13
-6,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,19:16:02
-34,1,1,white,red,red,5,3,4,1,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,19:24:07
-61,1,1,white,red,red,5,1,4,3,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,19:28:24
-77,1,1,white,red,red,5,3,4,1,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,19:44:56
-9,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,19:53:08
-3,1,1,white,red,red,5,4,4,0,yes,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,22:33:08
-74,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,22:37:48
-63,1,1,white,red,red,5,4,4,0,yes,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,12/30/2017,22:43:33
-63,2,57,white,green,green,10,2,9,7,no,50,yes,10,1,no,no,none,50,yes,yes,2,-1,2,,black,white,no,12/30/2017,22:44:09
-45,1,1,white,red,red,5,0,4,4,no,50,yes,10,-1,no,no,all,50,no,no,7,1,1,,black,white,no,1/3/2018,10:11:59
-199,1,1,white,red,red,5,5,4,-1,no,50,yes,10,-1,yes,no,all,50,no,no,7,1,1,,white,white,yes,1/8/2018,7:25:19
-199,2,25,black,red,white,15,2,3,1,no,50,no,8,1,no,no,partial,50,yes,no,6,-1,1,,black,black,yes,1/8/2018,7:25:51
-199,3,29,black,red,black,10,2,2,0,yes,50,yes,9,1,yes,yes,all,75,yes,yes,5,1,1,sound heard,black,black,yes,1/8/2018,7:26:26
-199,4,11,black,green,green,5,4,4,0,yes,50,yes,9,-1,yes,yes,all,50,yes,yes,2,-1,1,heard it all before,black,black,yes,1/8/2018,7:27:01
-11,1,1,white,red,red,5,2,2,0,yes,50,yes,10,-1,yes,yes,partial,50,no,yes,8,1,2,d,white,white,yes,1/8/2018,20:29:00
-11,2,65,black,green,black,5,4,5,1,no,50,yes,5,-1,no,no,partial,50,no,yes,3,-1,2,,black,black,yes,1/8/2018,20:29:31
-11,3,13,black,red,red,15,3,4,1,no,50,yes,3,-1,yes,yes,partial,50,no,yes,4,-1,2,e,black,black,yes,1/8/2018,20:30:03
-11,4,16,white,red,red,15,2,3,1,no,50,yes,5,-1,no,yes,all,50,yes,yes,6,1,2,d,white,white,yes,1/8/2018,20:30:37
-11,5,19,black,green,black,5,4,4,0,yes,50,yes,6,-1,yes,no,all,50,no,no,2,1,1,,black,black,yes,1/8/2018,20:31:08
-11,6,15,white,red,red,5,2,2,0,yes,50,no,10,-1,no,no,all,50,no,no,4,1,2,,white,white,yes,1/8/2018,20:31:38
-11,7,67,black,green,white,15,2,2,0,yes,50,yes,12,-1,yes,no,all,50,no,no,4,-1,2,,black,black,yes,1/8/2018,20:32:08
-11,8,70,black,green,green,10,2,2,0,yes,50,no,9,-1,no,no,all,50,no,no,2,-1,1,,black,black,yes,1/8/2018,20:32:38
-11,9,29,black,red,white,15,2,2,0,yes,50,no,12,1,no,yes,all,50,yes,yes,4,-1,2,ss,black,black,yes,1/8/2018,20:33:13
-11,10,58,black,green,green,5,4,5,1,no,50,yes,4,1,yes,no,partial,50,yes,no,1,-1,1,,black,black,yes,1/8/2018,20:33:48
-11,11,4,black,red,white,10,3,4,1,no,50,yes,3,1,yes,no,partial,50,no,yes,7,-1,1,,black,black,yes,1/8/2018,20:34:23
-11,12,42,black,red,white,10,2,3,1,no,50,no,3,-1,no,no,partial,50,yes,no,4,-1,2,,black,black,yes,1/8/2018,20:34:59
-11,13,27,white,red,red,5,1,3,2,no,50,no,9,1,no,no,partial,50,no,yes,1,1,2,,black,white,no,1/8/2018,20:48:36
-11,14,28,black,red,black,10,6,5,-1,no,0,no,8,1,yes,no,partial,50,no,yes,5,-1,1,,black,black,yes,1/8/2018,20:49:37
-11,15,51,white,red,white,15,2,1,-1,no,50,yes,11,1,yes,no,all,50,no,no,8,1,2,,white,white,yes,1/8/2018,20:50:32
-11,16,26,black,green,black,5,4,4,0,yes,50,no,9,1,yes,yes,partial,50,no,yes,7,1,1,random sound not the target or distractor,black,black,yes,1/8/2018,20:51:26
-11,17,53,black,green,black,15,5,7,2,no,50,yes,13,-1,yes,no,partial,50,yes,no,6,-1,2,,black,black,yes,1/8/2018,20:52:04
-6,1,1,white,red,red,5,2,2,0,yes,50,yes,10,-1,yes,no,partial,50,no,yes,8,1,2,,white,white,yes,1/8/2018,21:05:17
-76,1,1,white,red,red,5,2,2,0,yes,68,yes,10,-1,yes,no,all,50,no,no,8,1,2,,white,white,yes,1/9/2018,11:10:52
-4,1,1,white,red,red,5,2,2,0,yes,50,yes,10,-1,yes,no,all,50,no,no,8,1,2,,white,white,yes,1/9/2018,11:12:26
-4,2,23,white,red,white,15,6,6,0,yes,50,yes,12,-1,yes,no,all,50,no,no,1,-1,2,,white,white,yes,1/9/2018,11:12:59
-4,3,60,black,green,white,5,2,2,0,yes,50,no,13,1,no,yes,partial,50,yes,no,3,-1,2,red puck disappeared,black,black,yes,1/9/2018,11:13:37
-4,4,44,white,green,white,15,6,8,2,no,50,yes,1,1,yes,no,partial,50,yes,no,5,-1,1,,white,white,yes,1/9/2018,11:14:06
+pid,trialNum,scenario,aPuckColor,aTargetColor,uUnexpectedTargetColor,unexpectedTime,observedTransfers,actualTransfers,transferError,correctTransfers,transferConfidence,oddBallOccurrence,oddBallPosition,oddballEar,observedOddball,oddballConfidence,observedUnexpected,correctUnexpected,unexpectedConfidence,unexpectedPuckChgOccurred,unexpectedSoundOccurred,unexpectedSoundPosition,unexpectedSoundEar,unexpectedSoundOption,unexpectedDescription,trackedBaseColor,actualBaseColor,baseColorCorrect,logDate,logTime
+2,1,1,white,red,red,5,0,2,2,no,50,yes,10,-1,no,0,no,none,50,yes,yes,5,1,2,,black,white,no,7/9/2018,11:21:51
+2,2,29,white,green,green,5,0,1,1,no,50,yes,9,1,no,0,no,none,50,yes,yes,1,-1,1,,black,white,no,7/9/2018,11:24:27
+2,3,37,white,green,white,10,0,3,3,no,50,yes,7,-1,no,0,no,none,50,yes,yes,5,1,2,,black,white,no,7/9/2018,11:25:15
+2,4,23,black,red,white,15,0,3,3,no,50,yes,3,1,no,0,no,partial,50,yes,no,5,1,1,,black,black,yes,7/9/2018,11:25:49
+2,5,40,black,green,green,10,0,5,5,no,50,yes,11,1,no,0,no,partial,50,yes,no,7,1,2,,black,black,yes,7/9/2018,11:27:06
+2,6,8,black,green,black,15,0,6,6,no,50,no,2,1,no,0,no,none,50,yes,yes,5,-1,1,,black,black,yes,7/9/2018,11:27:44
+2,7,7,white,red,red,10,0,3,3,no,50,no,2,-1,no,0,no,none,50,yes,yes,4,-1,2,,black,white,no,7/9/2018,11:29:07
+2,8,21,white,red,white,5,0,12,12,no,50,no,3,-1,no,0,no,partial,50,yes,no,3,-1,1,,black,white,no,7/9/2018,11:29:37
+2,9,19,white,green,white,5,0,5,5,no,50,no,4,1,no,0,no,partial,50,yes,no,5,-1,2,,black,white,no,7/9/2018,11:30:47
+2,10,13,black,green,white,10,0,7,7,no,50,yes,9,1,no,0,no,partial,50,no,yes,2,1,1,,black,black,yes,7/9/2018,11:31:41
+2,11,46,black,red,black,5,0,7,7,no,50,yes,11,1,no,0,no,partial,50,no,yes,3,1,2,,black,black,yes,7/9/2018,11:32:19
+2,12,44,black,green,black,15,0,2,2,no,50,yes,5,1,no,0,no,all,50,no,no,2,1,1,,black,black,yes,7/9/2018,11:34:49
+2,13,51,white,red,black,15,0,3,3,no,50,yes,2,-1,no,0,no,all,50,no,no,5,-1,2,,black,white,no,7/9/2018,11:37:11
+2,14,52,black,red,white,15,0,6,6,no,50,no,6,-1,no,0,no,partial,50,no,yes,5,1,1,,black,black,yes,7/9/2018,11:41:23
+2,15,48,white,green,green,5,0,6,6,no,50,no,0,1,no,0,no,partial,50,no,yes,1,1,2,,black,white,no,7/9/2018,11:42:10
+2,16,36,white,red,black,5,0,1,1,no,50,no,13,-1,no,0,no,all,50,no,no,5,1,1,,black,white,no,7/9/2018,11:42:39
+2,17,4,white,red,red,5,0,5,5,no,50,no,2,-1,no,0,no,all,50,no,no,1,-1,2,,black,white,no,7/9/2018,11:43:11
+2,18,10,white,red,black,10,0,6,6,no,50,yes,12,-1,no,0,no,none,50,yes,yes,7,1,1,,black,white,no,7/9/2018,11:43:44
+2,19,57,black,red,white,5,0,1,1,no,86,yes,11,1,no,0,no,none,50,yes,yes,6,1,2,,black,black,yes,7/9/2018,11:44:20
+2,20,39,black,red,red,5,7,7,0,yes,76,yes,4,1,no,0,yes,partial,98,yes,no,5,1,1,a puck turned to red color in middle of trial,black,black,yes,7/9/2018,11:45:15
+2,21,59,black,red,white,15,2,4,2,no,63,yes,0,-1,yes,0,no,partial,67,yes,no,1,-1,2,,black,black,yes,7/9/2018,11:46:40
+2,22,18,white,green,white,5,0,3,3,no,50,no,3,1,no,0,no,none,50,yes,yes,3,-1,1,,black,white,no,7/9/2018,12:04:32
+2,23,9,black,green,white,15,1,1,0,yes,90,no,10,1,no,0,no,none,50,yes,yes,6,1,2,,black,black,yes,7/9/2018,12:05:06
+2,24,54,black,red,red,15,0,1,1,no,50,no,9,1,no,0,no,partial,50,yes,no,5,1,1,,black,black,yes,7/9/2018,12:05:41
+2,25,2,white,green,green,10,0,8,8,no,50,no,3,-1,no,0,no,partial,50,yes,no,6,1,2,,white,white,yes,7/9/2018,12:06:13
+2,26,30,black,red,white,10,0,6,6,no,50,yes,0,1,no,0,yes,partial,50,no,yes,4,-1,1,not really..testing out something,white,black,no,7/9/2018,12:06:54
+2,27,6,black,red,red,5,2,2,0,yes,3,yes,12,-1,no,0,no,partial,50,no,yes,8,1,2,,black,black,yes,7/9/2018,12:07:32
+2,28,61,white,red,black,15,2,4,2,no,92,yes,10,1,yes,0,no,all,6,no,no,3,-1,1,,white,white,yes,7/9/2018,12:08:33
+2,29,3,black,green,white,10,0,6,6,no,23,yes,11,1,no,0,no,all,86,no,no,4,-1,2,,black,black,yes,7/9/2018,12:09:19
+2,30,5,black,green,green,5,2,2,0,yes,93,no,11,-1,no,0,no,partial,14,no,yes,1,-1,1,,black,black,yes,7/9/2018,12:09:54
+2,31,15,white,green,green,10,0,2,2,no,4,no,3,1,no,0,no,partial,75,no,yes,5,-1,2,,black,white,no,7/9/2018,12:10:35
+2,32,66,white,green,green,5,0,3,3,no,50,no,10,-1,no,0,no,all,50,no,no,6,-1,1,,white,white,yes,7/9/2018,12:11:04
+2,33,50,white,green,green,15,0,2,2,no,75,no,10,1,no,0,yes,none,100,no,no,5,-1,2,odd sound played,white,white,yes,7/9/2018,12:11:46

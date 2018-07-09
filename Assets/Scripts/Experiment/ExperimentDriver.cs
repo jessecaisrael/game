@@ -15,24 +15,24 @@ public class ExperimentDriver : MonoBehaviour {
         //Generate 32 unique simulations from 72 existing ones to correspond with 2 X 2 X 2 X 2 X 2 design
         List<int> simulationList = GenerateRandom(32, 2, 72);
 
-        Debug.Log("List of simulation values return: \n");
+        //Debug.Log("List of simulation values return: \n");
 
-        foreach (int item in simulationList)
-            Debug.Log(item + "\n");
+        //foreach (int item in simulationList)
+          //  Debug.Log(item + "\n");
 
         //List all possible conditions
         //int simulationId = 2;  //id 1 is for practice.  Condition permutation needs to always occur with the same simulation conditions
         int simulationListIndex = 0;
 
         //Experimental variables below
-        Color[] attendedTargetColors = new Color[] { Color.red, Color.green };
         bool[] unexpectedOccurOptions = new bool[] { true, false };  //v4: Add back unexpected events.
         bool[] oddballOccurOptions = new bool[] { true, false };
         bool[] unexpectedSoundsOptions = new bool[] { true, false };
         int[] unexpectedSoundConds = new int[] { 1, 2 };
 
         //Extraneous variables below will be randomly accessed in nested loop
-        Color[] attendedPuckColors = new Color[]{Color.white, Color.black};
+        Color[] attendedTargetColors = new Color[] { Color.red, Color.green };
+        Color[] attendedPuckColors = new Color[] {Color.white, Color.black};
         Color[] unattendedUnexpectedTargetColors = new Color[]{Color.clear, Color.white, Color.black};  //clear is code for whatever the attended target color is (R/G)
         ActiveConditionSingleton.Thirds[] unexpectedTimes = new ActiveConditionSingleton.Thirds[] {
 						ActiveConditionSingleton.Thirds.Five,
@@ -50,12 +50,13 @@ public class ExperimentDriver : MonoBehaviour {
         Random.InitState(gameObject.GetComponent<Logger>().pid);
 
         conditions = new ArrayList();
-        foreach (Color attendedTargetColor in attendedTargetColors) {   
+        for (int j=0; j<2; j++) {    
             foreach (bool unexpectedOccurOption in unexpectedOccurOptions) {  
                 foreach (bool oddballOccurOption in oddballOccurOptions) {     
                     foreach (bool unexpectedSoundsOption in unexpectedSoundsOptions) {    
-                        foreach (int unexpectedSoundCond in unexpectedSoundConds) {    
-                            
+                        foreach (int unexpectedSoundCond in unexpectedSoundConds) {
+
+                            Color aTargetColor = attendedTargetColors[Random.Range(0, attendedTargetColors.Length)];
                             Color aPuckColor = attendedPuckColors[Random.Range(0, attendedPuckColors.Length)];
                             Color uUnexpectedTargetColor = unattendedUnexpectedTargetColors[Random.Range(0, unattendedUnexpectedTargetColors.Length)];
                       
@@ -67,7 +68,7 @@ public class ExperimentDriver : MonoBehaviour {
                             indexUnexpectedSoundPosition = Random.Range(1, 9);
                             indexUnexpectedSoundEar = earSettings[Random.Range(0, earSettings.Length)];
 
-                            conditions.Add(new Condition(simulationList[simulationListIndex++], aPuckColor, attendedTargetColor, uUnexpectedTargetColor, uTime, unexpectedOccurOption, unexpectedSoundsOption, oddballOccurOption, indexOddballPosition, indexOddballEar, indexUnexpectedSoundPosition, indexUnexpectedSoundEar, unexpectedSoundCond));
+                            conditions.Add(new Condition(simulationList[simulationListIndex++], aPuckColor, aTargetColor, uUnexpectedTargetColor, uTime, unexpectedOccurOption, unexpectedSoundsOption, oddballOccurOption, indexOddballPosition, indexOddballEar, indexUnexpectedSoundPosition, indexUnexpectedSoundEar, unexpectedSoundCond));
                         }
                     }
                 }
@@ -76,12 +77,12 @@ public class ExperimentDriver : MonoBehaviour {
         
         //Randomize condition order
         //This call has been moved to earlier point because Random is needed Random.InitState(gameObject.GetComponent<Logger>().pid);
-		for (int i=0; i < conditions.Count; i++) {
+		/*for (int i=0; i < conditions.Count; i++) {
 			Condition c = (Condition)conditions[i];
 			int randomIndex = Random.Range(i, conditions.Count);
 			conditions[i] = conditions[randomIndex];
 			conditions[randomIndex] = c;
-		}
+		}*/
 
 		LoadNextTrial ();
 	}

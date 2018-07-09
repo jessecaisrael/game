@@ -13,6 +13,7 @@ public class PosttaskGUI : MonoBehaviour {
 	//private string mentalTrialTime = "";
 	private string warningText = "";
     private int oddballSoundChoice = -1;
+    private int oddballConfidence = 50;
 
 	void OnGUI() {
 		//Style
@@ -71,6 +72,12 @@ public class PosttaskGUI : MonoBehaviour {
                 GUILayout.BeginHorizontal(); //Added new question for auditory task
                 GUILayout.Label("Was the target sound presented during the task?", labelStyle);
                 oddballSoundChoice = GUILayout.Toolbar(oddballSoundChoice, new string[] { "no", "yes" });
+                GUILayout.EndHorizontal();
+
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("How confident are you that you heard (or didn't hear) the target sound in this trial?", labelStyle);
+                oddballConfidence = (int)GUILayout.HorizontalSlider((float)oddballConfidence, 0f, 100f, sliderStyle, GUI.skin.horizontalSliderThumb, GUILayout.Width(200));
+                GUILayout.Label(oddballConfidence.ToString() + "%", labelStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("100%")).x));
                 GUILayout.EndHorizontal();
             }
             
@@ -142,6 +149,8 @@ public class PosttaskGUI : MonoBehaviour {
 				logger.observedUnexpected = "yes";
 		logger.unexpectedConfidence = unexpectedConfidence;  //v4: Back to int  //v2: This logger variable used to be an int; now string
 		logger.unexpectedDescription = unexpectedDescription;
+        logger.oddballConfidence = oddballConfidence;
+
 		/*logger.observedTrialTime = int.Parse (mentalTrialTime);*/
 
         if (oddballSoundChoice == 0)
