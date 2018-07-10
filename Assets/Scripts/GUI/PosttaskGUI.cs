@@ -115,8 +115,11 @@ public class PosttaskGUI : MonoBehaviour {
 
 			if( GUILayout.Button("Click to Continue to Next Trial")) {
 				if( ValidateInput()) {
-                    if(!ActiveConditionSingleton.fullAttentionReady)
+                    if (ActiveConditionSingleton.fullAttentionReady)
+                        LogFullAttentionResponses();
+                    else 
                         LogResponses();
+
 					ActiveConditionSingleton.complete = true;
 					Destroy(this);
 				}
@@ -175,7 +178,41 @@ public class PosttaskGUI : MonoBehaviour {
 		logger.LogTrial ();
 	}
 
-	bool ValidateInput() {
+    void LogFullAttentionResponses()
+    {
+        Logger logger = (Logger)GameObject.FindGameObjectWithTag("ExperimentScripts").GetComponent<Logger>();
+
+        // user input
+        logger.observedTransfers = -99;
+        
+        logger.transferConfidence = -99;
+
+        if (unexpectedChoice == 0)  //v4: added back  //v2: A lot of logic removed from this class to not account for or validate this
+            logger.observedUnexpected = "no";
+        else if (unexpectedChoice == 1)
+            logger.observedUnexpected = "yes";
+
+        logger.unexpectedConfidence = unexpectedConfidence;  //v4: Back to int  //v2: This logger variable used to be an int; now string
+        logger.unexpectedDescription = unexpectedDescription;
+        logger.oddballConfidence = oddballConfidence;
+
+        logger.observedOddball = "na";
+        logger.oddballConfidence = -99;
+
+        // trial factors
+        logger.trackedBaseColor = "na";
+
+        if (ActiveConditionSingleton.attendedPuckColor.Equals(Color.black))
+            logger.actualBaseColor = "black";
+        else if (ActiveConditionSingleton.attendedPuckColor.Equals(Color.white))
+            logger.actualBaseColor = "white";
+        else
+            throw new UnityException("Invalid actual base color: " + ActiveConditionSingleton.attendedPuckColor);
+
+        logger.LogTrial();
+    }
+
+    bool ValidateInput() {
 		warningText = "";
 		bool valid = true;
 
