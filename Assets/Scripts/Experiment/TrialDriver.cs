@@ -39,7 +39,7 @@ public class TrialDriver : MonoBehaviour {
        //Read in positions and velocities
 		string simulationData = "";
 
-        using ( System.IO.StreamReader r = new System.IO.StreamReader(Application.dataPath + "/.." + "/Assets/IO/Scenarios.csv") ) {
+        using ( System.IO.StreamReader r = new System.IO.StreamReader("C:\\Users\\Rosanne\\workspace\\18Jul09\\game\\Assets\\IO\\Scenarios.csv") ) {
 			for( int i=0; i < simulationId; i++ ) {
 				simulationData = r.ReadLine();
 			}

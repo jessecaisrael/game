@@ -23,7 +23,7 @@ public class PracticeDriver : MonoBehaviour {
         ActiveConditionSingleton.unexpectedSoundOccurs = true;
         ActiveConditionSingleton.unexpectedSoundPosition = 5;
         ActiveConditionSingleton.unexpectedSoundEar = 1;
-        ActiveConditionSingleton.unexpectedSoundOption = 2;
+        ActiveConditionSingleton.unexpectedSoundOption = 1;
         ActiveConditionSingleton.oddballOccurs = true;
         ActiveConditionSingleton.oddballPos = 10;
         ActiveConditionSingleton.oddballEar = -1;

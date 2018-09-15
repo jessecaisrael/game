@@ -20,7 +20,7 @@ public class PepTalkGUI : MonoBehaviour {
 		{//block for organization
 			GUILayout.Label ("Welcome!", titleStyle);
 			
-			string pepTalkText = "Thank you for volunteering for my experiment!  I really appreciate your time and effort.  In the spirit of good data, please remove potential distractions, such as cell phones, watch alarms, etc. Focus is important in this study, so having your full attention will help things roll smoothly.  I hope you find it interesting!  If you want to know more about the research topic, be sure to talk to the experimenter after completing the experiment.  GO SCIENCE!";
+			string pepTalkText = "Please continue to keep all potential distractions, such as cell phones, watch alarms, etc. turned off during the remainder of the experimenter. Please read and follow the directions carefully as they have changed from the last part of the experiment. ";
 			GUILayout.Label (pepTalkText, paragraphStyle, GUILayout.ExpandWidth(true));
 			
 			GUILayout.Space(20);

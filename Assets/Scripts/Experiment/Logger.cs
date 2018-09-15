@@ -81,10 +81,10 @@ public class Logger : MonoBehaviour {
         string message = pid.ToString () + "," + trialNum++ + "," + scenario + "," + attendedPuckColor + "," + attendedTargetColor + "," + unattendedUnexpectedTargetColor + "," + unexpectedTime +
             "," + observedTransfers + "," + actualTransfers + "," + transferError + "," + correctTransfers + "," + transferConfidence + "," + oddballOccurred + 
             "," + oddballPosition + "," + oddballEar + "," + observedOddball + "," + oddballConfidence + "," + observedUnexpected + "," + correctUnexpected + "," + unexpectedConfidence + "," + unexpectedPuckChgOccurred + "," + unexpectedSoundOccurred + "," + unexpectedSoundPosition + ","
-            + unexpectedSoundEar + "," + unexpectedSoundOption + "," + unexpectedDescription + "," + trackedBaseColor + "," + 
+            + unexpectedSoundEar + "," + unexpectedSoundOption + "," + "\"" + unexpectedDescription + "\"" + "," + trackedBaseColor + "," + 
             actualBaseColor + "," + correctTracked + "," + logDate + "," + logTime;
 
-        using ( System.IO.StreamWriter w = System.IO.File.AppendText(Application.dataPath + "/.." + "/Assets/IO/Experiment Data.csv")) {
+        using ( System.IO.StreamWriter w = System.IO.File.AppendText("C:\\Users\\Rosanne\\workspace\\18Jul09\\game\\Assets\\IO\\Experiment Data.csv")) {
             w.WriteLine(message);
             w.Flush();
         }

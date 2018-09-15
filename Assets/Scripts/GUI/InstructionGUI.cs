@@ -9,7 +9,7 @@ public class InstructionGUI : MonoBehaviour {
 	void Start() {
 		puckSample = (Texture2D)Resources.Load ("PuckSample");
 
-        scenarioText = "In this experiment, you will complete 2 tasks.  For the <b>first task</b>, a group of pucks (some with a black base color and some with a white base color) will be bouncing around.  One of the black pucks will have a colored dot in its center indicating that puck is a target puck.  One of the white pucks will also be a target puck.  When a target puck collides with another puck of the same base color (i.e. black-black or white-white), sometimes (not always!) the target will transfer to the colliding puck of the same base color.";
+        scenarioText = "You will complete 2 tasks.  For the <b>first task</b>, a group of pucks (some with a black base color and some with a white base color) will be bouncing around.  One of the black pucks will have a colored dot in its center indicating that puck is a target puck.  One of the white pucks will also be a target puck.  When a target puck collides with another puck of the same base color (i.e. black-black or white-white), sometimes (not always!) the target will transfer to the colliding puck of the same base color.";
         
     }
 

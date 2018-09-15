@@ -153,29 +153,33 @@ public class AudioManager : MonoBehaviour
         int index = 0;
         
         while (index < isi.Count) {
-           // Debug.Log("Index: " + index + "; ISI: " + isi[index]);
+            // Debug.Log("Index: " + index + "; ISI: " + isi[index]);
+
 
             yield return new WaitForSeconds(isi[index]);
-            
-            if (surpriseIndex == index && playUnexpected && unexpectedSource != null) {
+
+            if (surpriseIndex == index && playUnexpected && unexpectedSource != null)
+            {
                 //Randomize spatial position of unexpected tone
                 unexpectedSource.panStereo = surpriseEar;
                 if (unexpectedSpeed == 1)
-                    unexpectedSource.PlayOneShot(unexpectedClip1, 0.4f);
+                    unexpectedSource.PlayOneShot(unexpectedClip1, 0.8f);
                 else if (unexpectedSpeed == 2)
-                    unexpectedSource.PlayOneShot(unexpectedClip2, 0.4f);
+                    unexpectedSource.PlayOneShot(unexpectedClip2, 0.8f);
             }
-            if (oddballPos == index && playOddball == 1) {
+            if (oddballPos == index && playOddball == 1)
+            {
                 soundSource.panStereo = oddballEar;
-                soundSource.PlayOneShot(OddBallClip, 0.5f);
+                soundSource.PlayOneShot(OddBallClip, 0.35f);
             }
-            else {
+            else
+            {
                 soundSource.panStereo = earSettings[Random.Range(0, earSettings.Length)];
                 int stdIndex = Random.Range(1, 3);
                 if (stdIndex == 1)
-                    soundSource.PlayOneShot(std2Clip, 0.5f);
+                    soundSource.PlayOneShot(std2Clip, 0.95f);
                 else
-                    soundSource.PlayOneShot(std3Clip, 0.5f);
+                    soundSource.PlayOneShot(std3Clip, 0.30f);
             }
             index++;
         }

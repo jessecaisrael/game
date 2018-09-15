@@ -26,7 +26,7 @@ public class ExperimentStartGUI : MonoBehaviour {
 			GUILayout.Label ("Experiment", titleStyle);
 
 			GUILayout.BeginHorizontal ();
-			string label = "Enter PID (from Qualtrics survey):";
+			string label = "Enter SONA ID:";
 			GUILayout.Label (label, labelStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent(label)).x), GUILayout.ExpandWidth(false));
 			pidString = GUILayout.TextField (pidString, 3, textFieldStyle, GUILayout.Width(labelStyle.CalcSize(new GUIContent("000")).x));
 			GUILayout.EndHorizontal ();

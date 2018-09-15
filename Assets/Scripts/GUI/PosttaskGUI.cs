@@ -81,10 +81,17 @@ public class PosttaskGUI : MonoBehaviour {
                 GUILayout.EndHorizontal();
             }
             
-            GUILayout.BeginHorizontal ();  //v4: Add back option question if saw unexpected.
-			GUILayout.Label ("Did you notice anything unexpected?", labelStyle);
-			unexpectedChoice = GUILayout.Toolbar (unexpectedChoice, new string[]{"no","yes"});
-			GUILayout.EndHorizontal ();
+            if(ActiveConditionSingleton.fullAttentionReady) {
+				GUILayout.BeginHorizontal ();  //v4: Add back option question if saw unexpected.
+				GUILayout.Label ("Did you hear the unusual (out of place) sound?", labelStyle);
+				unexpectedChoice = GUILayout.Toolbar (unexpectedChoice, new string[]{"no","yes"});
+				GUILayout.EndHorizontal ();
+			} else {
+				GUILayout.BeginHorizontal ();  //v4: Add back option question if saw unexpected.
+				GUILayout.Label ("Did you notice anything unexpected?", labelStyle);
+				unexpectedChoice = GUILayout.Toolbar (unexpectedChoice, new string[]{"no","yes"});
+				GUILayout.EndHorizontal ();
+			}
 			
 			GUILayout.BeginHorizontal ();  //v4: Add back slider question on confidence.
 			GUILayout.Label ("How confident are you in that assertion?", labelStyle);
@@ -194,7 +201,6 @@ public class PosttaskGUI : MonoBehaviour {
 
         logger.unexpectedConfidence = unexpectedConfidence;  //v4: Back to int  //v2: This logger variable used to be an int; now string
         logger.unexpectedDescription = unexpectedDescription;
-        logger.oddballConfidence = oddballConfidence;
 
         logger.observedOddball = "na";
         logger.oddballConfidence = -99;
